@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 514a96ae172fe274c81bd705fc83217e
+timeCreated: 1525765465
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Enemy
+    100002: Enemy Head
+    100004: Enemy L Calf
+    100006: Enemy L Clavicle
+    100008: Enemy L Finger0
+    100010: Enemy L Foot
+    100012: Enemy L Forearm
+    100014: Enemy L Hand
+    100016: Enemy L Thigh
+    100018: Enemy L Toe0
+    100020: Enemy L Toe01
+    100022: Enemy L Toe02
+    100024: Enemy L UpperArm
+    100026: Enemy LPlatform
+    100028: Enemy Neck
+    100030: Enemy Pelvis
+    100032: Enemy PelvisBone01
+    100034: Enemy R Calf
+    100036: Enemy R Clavicle
+    100038: Enemy R Finger0
+    100040: Enemy R Foot
+    100042: Enemy R Forearm
+    100044: Enemy R Hand
+    100046: Enemy R Thigh
+    100048: Enemy R Toe0
+    100050: Enemy R UpperArm
+    100052: Enemy RIKTarget
+    100054: Enemy RPlatform
+    100056: Enemy Spine
+    100058: Enemy Spine4
+    100060: //RootNode
+    400000: Enemy
+    400002: Enemy Head
+    400004: Enemy L Calf
+    400006: Enemy L Clavicle
+    400008: Enemy L Finger0
+    400010: Enemy L Foot
+    400012: Enemy L Forearm
+    400014: Enemy L Hand
+    400016: Enemy L Thigh
+    400018: Enemy L Toe0
+    400020: Enemy L Toe01
+    400022: Enemy L Toe02
+    400024: Enemy L UpperArm
+    400026: Enemy LPlatform
+    400028: Enemy Neck
+    400030: Enemy Pelvis
+    400032: Enemy PelvisBone01
+    400034: Enemy R Calf
+    400036: Enemy R Clavicle
+    400038: Enemy R Finger0
+    400040: Enemy R Foot
+    400042: Enemy R Forearm
+    400044: Enemy R Hand
+    400046: Enemy R Thigh
+    400048: Enemy R Toe0
+    400050: Enemy R UpperArm
+    400052: Enemy RIKTarget
+    400054: Enemy RPlatform
+    400056: Enemy Spine
+    400058: Enemy Spine4
+    400060: //RootNode
+    7400000: Attack
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Attack
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
