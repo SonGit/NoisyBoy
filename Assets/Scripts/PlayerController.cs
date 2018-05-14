@@ -22,6 +22,15 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         AxisMovement();
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (Time.timeScale == 1.0F)
+                Time.timeScale = 0.2F;
+            else
+                Time.timeScale = 1.0F;
+            Time.fixedDeltaTime = 0.02F * Time.timeScale;
+        }
     }
 
     float axis;
@@ -33,23 +42,23 @@ public class PlayerController : MonoBehaviour {
         {
             if (axis < 0)
             {
-                t.position += t.forward * Time.deltaTime * Speed;
+                t.position += t.forward * Time.deltaTime * Speed * 1 / Time.timeScale;
                 orientation = 1;
             }
             else
             {
                 orientation = -1;
-                t.position -= t.forward * Time.deltaTime * Speed;
+                t.position -= t.forward * Time.deltaTime * Speed * 1 / Time.timeScale;
             }
         }
 
-        if(orientation > 0)
+        if (orientation > 0)
         {
-            Mesh.localRotation = Quaternion.Lerp(Mesh.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * TurnSpeed);
+            Mesh.localRotation = Quaternion.Lerp(Mesh.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * TurnSpeed * 1 / Time.timeScale);
         }
         else
         {
-            Mesh.localRotation = Quaternion.Lerp(Mesh.localRotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * TurnSpeed);
+            Mesh.localRotation = Quaternion.Lerp(Mesh.localRotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * TurnSpeed * 1 / Time.timeScale);
         }
 
     }
