@@ -35,7 +35,7 @@ public class Door : MonoBehaviour {
 
     public void Open()
     {
-        targetRot = Quaternion.Euler(0, -90, 0);
+        targetRot = Quaternion.Euler(0, 90, 0);
     }
 
     public void Close()
