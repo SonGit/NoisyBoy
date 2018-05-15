@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class ObjectPool : MonoBehaviour {
 
-//	public static ObjectPool instance;
-//
+	public static ObjectPool instance;
+
 //	GenericObject<Enemy> enemy;
 //
 //	GenericObject<Explosion> explosion1;
@@ -15,21 +15,23 @@ public class ObjectPool : MonoBehaviour {
 //	GenericObject<Explosion> explosion3;
 //	GenericObject<Explosion> explosion4;
 //	GenericObject<AddScoreText> addScoreText;
-//
-//	void Awake()
-//	{
-//		instance = this;
-//	}
-//
-//	// Use this for initialization
-//	void Start () {
+	GenericObject<ThrowObject> throwObject;
+
+	void Awake()
+	{
+		instance = this;
+	}
+
+	// Use this for initialization
+	void Start () {
 //		enemy = new GenericObject<Enemy>(ObjectFactory.PrefabType.Enemy,20);
 //		explosion1 = new GenericObject<Explosion>(ObjectFactory.PrefabType.Explosion1,3);
 //		explosion4= new GenericObject<Explosion>(ObjectFactory.PrefabType.Explosion4,3);
 //		addScoreText= new GenericObject<AddScoreText>(ObjectFactory.PrefabType.ScoreAddText,1);
-//	}
-//		
-//
+		throwObject = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.ThrowObject,1);
+	}
+		
+
 //	public Enemy GetEnemy()
 //	{
 //		return enemy.GetObj ();
@@ -59,4 +61,9 @@ public class ObjectPool : MonoBehaviour {
 //	{
 //		return addScoreText.GetObj ();
 //	}
+
+	public ThrowObject GetThrowObject()
+	{
+		return throwObject.GetObj ();
+	}
 }
