@@ -23,14 +23,6 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         AxisMovement();
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (Time.timeScale == 1.0F)
-                Time.timeScale = 0.2F;
-            else
-                Time.timeScale = 1.0F;
-            Time.fixedDeltaTime = 0.02F * Time.timeScale;
-        }
     }
 
     float axis;
