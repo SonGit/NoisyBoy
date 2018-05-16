@@ -54,6 +54,7 @@ public class SlowMo : MonoBehaviour {
             Time.timeScale = SlowMoSpeed;
         else
             Time.timeScale = 1.0F;
-        Time.fixedDeltaTime = SlowMoSpeed * Time.timeScale;
+
+        Time.fixedDeltaTime = SlowMoSpeed * 0.02f;
     }
 }
