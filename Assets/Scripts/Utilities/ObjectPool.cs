@@ -28,7 +28,7 @@ public class ObjectPool : MonoBehaviour {
 //		explosion1 = new GenericObject<Explosion>(ObjectFactory.PrefabType.Explosion1,3);
 //		explosion4= new GenericObject<Explosion>(ObjectFactory.PrefabType.Explosion4,3);
 //		addScoreText= new GenericObject<AddScoreText>(ObjectFactory.PrefabType.ScoreAddText,1);
-		throwObject = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.ThrowObject,1);
+		throwObject = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.ThrowObject,20);
 	}
 		
 
