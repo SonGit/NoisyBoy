@@ -52,16 +52,23 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Pos.cs" />
+     <Compile Include="Assets\Scripts\Car.cs" />
+     <Compile Include="Assets\Scripts\Door.cs" />
+     <Compile Include="Assets\Scripts\Doorway.cs" />
+     <Compile Include="Assets\Scripts\DoorwayEnemy.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\Objects\AudioManager_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\AudioSource_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\DataController.cs" />
      <Compile Include="Assets\Scripts\Objects\FinalScoreUI.cs" />
      <Compile Include="Assets\Scripts\Objects\LifeManager.cs" />
      <Compile Include="Assets\Scripts\Objects\MusicThemeManager.cs" />
-     <Compile Include="Assets\Scripts\Objects\ObjectThrowSpawner.cs" />
      <Compile Include="Assets\Scripts\Objects\PlayerController_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\ScoreUI.cs" />
+     <Compile Include="Assets\Scripts\Objects\Spawner.cs" />
      <Compile Include="Assets\Scripts\Objects\ThrowObject.cs" />
+     <Compile Include="Assets\Scripts\Objects\TimeManager.cs" />
+     <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\UI\VirtualJoystick.cs" />
      <Compile Include="Assets\Scripts\Utilities\Cacheable.cs" />
      <Compile Include="Assets\Scripts\Utilities\GenericObject.cs" />
@@ -69,6 +76,8 @@
      <Compile Include="Assets\Scripts\Utilities\ObjectPool.cs" />
      <Compile Include="Assets\Scripts\Utilities\ObjectPoolSound.cs" />
      <Compile Include="Assets\Scripts\Utilities\Utility.cs" />
+     <Compile Include="Assets\Scripts\Window.cs" />
+     <Compile Include="Assets\Scripts\WindowEnemy.cs" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\FinalPass.shader" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Debug\Waveform.compute" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\Uber.shader" />
