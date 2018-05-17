@@ -2,23 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowObject : Cacheable {
+public class Sandal : Cacheable {
 
     private Rigidbody rb;
     private TrailRenderer trailRenderer;
 
-    public Transform target;
+	public Vector3 target;
 
     public float h = 25;
     public float gravity = -18;
 
     public bool debugPath;
 
+	public bool onEnable = false;
+
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
         trailRenderer = this.GetComponentInChildren<TrailRenderer>();
         rb.useGravity = false;
+		Destroy ();
+		onEnable = true;
     }
 
     void Update()
@@ -32,7 +36,15 @@ public class ThrowObject : Cacheable {
         {
             DrawPath();
         }
+
+		if (onEnable) {
+			onEnable = false;
+			Launch();
+
+		}
+			
     }
+		
 
     void Launch()
     {
@@ -48,13 +60,14 @@ public class ThrowObject : Cacheable {
 
     void OnCollisionEnter(Collision collision)
     {
-        trailRenderer.enabled = false;
+        //trailRenderer.enabled = false;
     }
 
     LaunchData CalculateLaunchData()
     {
-        float displacementY = target.position.y - rb.position.y;
-        Vector3 displacementXZ = new Vector3(target.position.x - rb.position.x, 0, target.position.z - rb.position.z);
+		target = new Vector3 (Spawner.instance.posPlayer.x,0f,0.21f);
+        float displacementY = target.y - rb.position.y;
+        Vector3 displacementXZ = new Vector3(target.x - rb.position.x, 0, target.z - rb.position.z);
         float time = Mathf.Sqrt(-2 * h / gravity) + Mathf.Sqrt(2 * (displacementY - h) / gravity);
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * h);
         Vector3 velocityXZ = displacementXZ / time;

@@ -31,11 +31,12 @@ public class DoorwayEnemy : Enemy {
 
 	public override void AttackEvent ()
 	{
-		Spawner.instance.SpawnThrow (transform);
+		Spawner.instance.SpawnThrow (PosAttack);
 	}
 
 	IEnumerator AttackSequence()
 	{
+		Spawner.instance.isSpawnDoorwayEnemy = false;
 		Doorway doorway = (Doorway)testDoor;
 		testDoor.Open ();
 		t.position = doorway.DoorStartPoint.position;
@@ -47,6 +48,9 @@ public class DoorwayEnemy : Enemy {
 
 		yield return StartCoroutine(MoveToPos(doorway.DoorStartPoint.position));
 		testDoor.Close();
+		yield return new WaitForSeconds(1);
+		Spawner.instance.isSpawnDoorwayEnemy = true;
+		Spawner.instance.StartSpawnSpawnDoorwayEnemy ();
 	}
 
 	IEnumerator MoveToPos(Vector3 des)

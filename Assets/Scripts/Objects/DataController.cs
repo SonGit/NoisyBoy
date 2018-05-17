@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class DataController : MonoBehaviour {
 
-	public static DataController instance;
-
-	private void Awake ()
-	{
-		if (instance == null) 
-		{
-			instance = this;
-		}
-	}
-	// Use this for initialization
-	void Start () {
-		DontDestroyOnLoad (gameObject);
-	}
+//	public static DataController instance;
+//
+//	private void Awake ()
+//	{
+//		if (instance == null) 
+//		{
+//			instance = this;
+//		}
+//	}
+//	// Use this for initialization
+//	void Start () {
+//		DontDestroyOnLoad (gameObject);
+//	}
 	
 //	// Update is called once per frame
 //	void Update () {

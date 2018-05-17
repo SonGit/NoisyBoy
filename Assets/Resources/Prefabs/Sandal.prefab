@@ -271,10 +271,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee0f136d9059434c913721f25c1a6b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
   h: 0.1
-  gravity: -9
+  gravity: -2
   debugPath: 1
+  onEnable: 0
 --- !u!136 &136786720705102794
 CapsuleCollider:
   m_ObjectHideFlags: 1

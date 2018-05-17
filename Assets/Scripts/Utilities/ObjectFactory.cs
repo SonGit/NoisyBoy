@@ -25,7 +25,7 @@ public class ObjectFactory: MonoBehaviour {
 		Explosion3,
 		Explosion4,
 		ScoreAddText,
-		ThrowObject
+		Sandal
 	}
 
 	public Dictionary<PrefabType,string> PrefabPaths = new Dictionary<PrefabType, string> {
@@ -38,7 +38,7 @@ public class ObjectFactory: MonoBehaviour {
 		{ PrefabType.Explosion3, "Prefabs/Explosion3" },
 		{ PrefabType.Explosion4, "Prefabs/Explosion4" },
 		{ PrefabType.ScoreAddText, "Prefabs/ScoreAddText" },
-		{ PrefabType.ThrowObject, "Prefabs/ThrowObject" },
+		{ PrefabType.Sandal, "Prefabs/Sandal" },
 	};
 
 	public GameObject MakeObject(PrefabType type)

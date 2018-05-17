@@ -24,13 +24,15 @@ public class WindowEnemy : Enemy {
 
 	public override void AttackEvent ()
 	{
-		Spawner.instance.SpawnThrow (transform);
+		Spawner.instance.SpawnThrow (PosAttack);
+	
 	}
 
 
 
 	IEnumerator AttackSequence()
 	{
+		
 		testDoor.Open ();
 
 		yield return new WaitForSeconds(2.2f);
@@ -38,6 +40,12 @@ public class WindowEnemy : Enemy {
 		yield return new WaitForSeconds(2);
 
 		testDoor.Close();
+		Spawner.instance.dem -= 1;
+		if (Spawner.instance.dem <= 0) {
+			yield return new WaitForSeconds (Spawner.instance.rateWindowEnemyAttack);
+			Spawner.instance.StartSpawnWindowEnemy ();
+		}
+			
 	}
 
 
