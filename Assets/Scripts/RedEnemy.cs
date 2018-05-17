@@ -56,6 +56,20 @@ public class RedEnemy : Enemy
             doorway.Close();
         }
 
+        if (door is DoubleDoor)
+        {
+            DoubleDoor window = door as DoubleDoor;
+            window.Open();
+
+            transform.position = window.startPoint.position;
+
+            yield return new WaitForSeconds(2.2f);
+            animator.SetTrigger("Attack");
+            yield return new WaitForSeconds(2);
+
+            window.Close();
+        }
+
         yield return new WaitForSeconds(1);
         door.isFree = true;
         Destroy();
