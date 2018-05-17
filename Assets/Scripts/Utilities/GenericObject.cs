@@ -25,7 +25,7 @@ public class GenericObject <T> where T : Cacheable
 
 		if (hs != null) {
 			_objs.Add (hs);
-			hs.Live ();
+			hs.Destroy ();
 			return hs;
 		}
 		return default(T);
@@ -37,10 +37,16 @@ public class GenericObject <T> where T : Cacheable
 		foreach (T t in _objs) 
 		{
 			if (!t._isInPool)
-				return t;
+            {
+                t.Live();
+                return t;
+            }
 		}
 
-		return MakeObj ();
+        T newObj = MakeObj();
+        newObj.Live();
+
+        return newObj;
 	}
 
 }

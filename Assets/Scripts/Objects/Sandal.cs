@@ -16,41 +16,41 @@ public class Sandal : Cacheable {
 
 	public bool onEnable = false;
 
+    public bool hasInit;
+
     void Start()
     {
-        rb = this.GetComponent<Rigidbody>();
-        trailRenderer = this.GetComponentInChildren<TrailRenderer>();
-        rb.useGravity = false;
-		Destroy ();
-		onEnable = true;
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Launch();
-        }
 
         if (debugPath)
         {
             DrawPath();
         }
+		
+    }
 
-		if (onEnable) {
-			onEnable = false;
-			Launch();
-
-		}
-			
+    void Init()
+    {
+        rb = this.GetComponent<Rigidbody>();
+        trailRenderer = this.GetComponentInChildren<TrailRenderer>();
+        rb.useGravity = false;
+        onEnable = true;
+        hasInit = true;
     }
 		
 
-    void Launch()
+    public void Launch(Vector3 target)
     {
-        if (target == null)
-            return;
+        if(!hasInit)
+        {
+            Init();
+        }
 
+        this.target = target;
         Physics.gravity = Vector3.up * gravity;
         rb.useGravity = true;
         rb.velocity = CalculateLaunchData().initialVelocity;
@@ -60,12 +60,11 @@ public class Sandal : Cacheable {
 
     void OnCollisionEnter(Collision collision)
     {
-        //trailRenderer.enabled = false;
+        trailRenderer.enabled = false;
     }
 
     LaunchData CalculateLaunchData()
     {
-		target = new Vector3 (Spawner.instance.posPlayer.x,0f,0.21f);
         float displacementY = target.y - rb.position.y;
         Vector3 displacementXZ = new Vector3(target.x - rb.position.x, 0, target.z - rb.position.z);
         float time = Mathf.Sqrt(-2 * h / gravity) + Mathf.Sqrt(2 * (displacementY - h) / gravity);

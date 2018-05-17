@@ -6,6 +6,8 @@ public class Window : Door {
 
 	public bool left;
 
+    public Transform startPoint;
+
 	// Use this for initialization
 	void Start () {
 	}
@@ -18,11 +20,10 @@ public class Window : Door {
 	public override void Open ()
 	{
 		if (left) {
-			targetRot = Quaternion.Euler (0, -90, 0);
+			targetRot = Quaternion.Euler (0, -136, 0);
 		} else {
-			targetRot = Quaternion.Euler (0, 90, 0);
+			targetRot = Quaternion.Euler (0, -136, 0);
 		}
-
 	}
 
 	public override void Close ()

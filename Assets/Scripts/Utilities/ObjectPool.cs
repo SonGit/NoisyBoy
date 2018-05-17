@@ -10,7 +10,9 @@ public class ObjectPool : MonoBehaviour {
 
 	GenericObject<Sandal> sandal;
 
-	void Awake()
+    GenericObject<RedEnemy> redEnemies;
+
+    void Awake()
 	{
 		instance = this;
 	}
@@ -18,13 +20,18 @@ public class ObjectPool : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		sandal = new GenericObject<Sandal>(ObjectFactory.PrefabType.Sandal,20);
-	}
+		sandal = new GenericObject<Sandal>(ObjectFactory.PrefabType.Sandal,2);
+        redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy, 2);
+
+    }
 		
-
-
 	public Sandal GetSandal()
 	{
 		return sandal.GetObj ();
 	}
+
+    public RedEnemy GetRedEnemy()
+    {
+        return redEnemies.GetObj();
+    }
 }

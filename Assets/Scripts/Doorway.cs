@@ -8,10 +8,6 @@ public class Doorway : Door {
 	public Transform DoorEndPoint;
 	public bool left;
 
-	// Use this for initialization
-	void Start () {
-	}
-	
 	// Update is called once per frame
 	void Update () {
 		base.Update ();
