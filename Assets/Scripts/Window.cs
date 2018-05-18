@@ -7,10 +7,6 @@ public class Window : Door {
 	public bool left;
 
     public Transform startPoint;
-
-	// Use this for initialization
-	void Start () {
-	}
 	
 	// Update is called once per frame
 	void Update () {

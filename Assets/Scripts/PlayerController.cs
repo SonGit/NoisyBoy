@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour {
 
     public Transform Mesh;
 
+	public VirtualJoystick joystick;
+
     Transform t;
 
 	// Use this for initialization
@@ -27,20 +29,25 @@ public class PlayerController : MonoBehaviour {
 
     float axis;
     float orientation;
+	Vector3 nextPos;
     void AxisMovement()
     {
-        axis = Input.GetAxis("Horizontal");
+		axis = joystick.Horizontal ();
         if(axis != 0)
         {
             if (axis < 0)
             {
-                t.position += t.forward * Time.deltaTime * Speed * 1 / Time.timeScale;
-                orientation = 1;
+				orientation = 1;
+				nextPos =  t.position + (t.forward * Time.deltaTime * Speed * 1 / Time.timeScale);
+				if(nextPos.x  < 1.1f)
+				t.position = nextPos;
             }
             else
             {
                 orientation = -1;
-                t.position -= t.forward * Time.deltaTime * Speed * 1 / Time.timeScale;
+				nextPos = t.position - (t.forward * Time.deltaTime * Speed * 1 / Time.timeScale);
+				if(nextPos.x  > -1)
+					t.position = nextPos;
             }
         }
 

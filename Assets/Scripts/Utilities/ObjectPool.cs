@@ -21,7 +21,7 @@ public class ObjectPool : MonoBehaviour {
 	void Start () {
 
 		sandal = new GenericObject<Sandal>(ObjectFactory.PrefabType.Sandal,2);
-        redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy, 2);
+        redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy,5);
 
     }
 		

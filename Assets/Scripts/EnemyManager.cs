@@ -50,6 +50,7 @@ public class EnemyManager : MonoBehaviour {
                 freeWindows.Add(door);
             }
         }
+		Debug.Log (freeWindows.Count);
         return freeWindows;
     }
 }
