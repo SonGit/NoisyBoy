@@ -21,7 +21,8 @@ public class RedEnemy : Enemy
     {
         Sandal sandal = ObjectPool.instance.GetSandal();
         sandal.transform.position = shootPoint.position;
-        sandal.Launch(transform.position + transform.forward * .4f);
+        Vector3 pos = (transform.position + transform.forward * .4f);
+        sandal.Launch(new Vector3(pos.x, 0.0565f, pos.z));
     }
 
     IEnumerator AttackSequence(Door door)

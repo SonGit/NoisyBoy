@@ -96,8 +96,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1133553640051054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.309, y: 0.64093894, z: -0.53115803}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.30900002, y: 0.64093894, z: -0.53115803}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4597304535832732}
@@ -231,8 +231,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DoorMesh: {fileID: 4425212217429012}
-  Speed: 1.5
-  isFree: 1
+  Speed: 5
+  isFree: 0
   DoorStartPoint: {fileID: 4597304535832732}
   DoorEndPoint: {fileID: 4500464413947356}
   left: 0
