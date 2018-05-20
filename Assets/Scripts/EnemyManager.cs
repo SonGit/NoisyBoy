@@ -18,7 +18,8 @@ public class EnemyManager : MonoBehaviour {
         while(true)
         {
             Spawn();
-            yield return new WaitForSeconds(rate);
+            float sec = (rate + (Random.Range(0, 1000)) / 1000f);
+            yield return new WaitForSeconds(sec);
         }
       
     }
@@ -29,6 +30,7 @@ public class EnemyManager : MonoBehaviour {
         if(freeWindow.Count == 0)
         {
             Debug.Log("NO WINDOWS FOUND!");
+            return;
         }
 
         int ran = Random.Range(0, freeWindow.Count);

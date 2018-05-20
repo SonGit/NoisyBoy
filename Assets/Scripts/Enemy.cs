@@ -61,7 +61,7 @@ public abstract class Enemy : Cacheable
     public override void OnLive()
     {
         gameObject.SetActive(true);
-
+        transform.position = new Vector3(999,999,999);
     }
 
     public override void OnDestroy()

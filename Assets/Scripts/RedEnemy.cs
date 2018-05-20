@@ -21,8 +21,8 @@ public class RedEnemy : Enemy
     {
 		ThrowObject sandalA = ObjectPool.instance.GetSandalA();
 		sandalA.transform.position = shootPoint.position;
-		//sandalA.Launch(transform.position + transform.forward * .4f);
-        sandalA.Launch(Player.instance.transform.position);
+        //sandalA.Launch(transform.position + transform.forward * .4f);
+        sandalA.Launch(Player.instance.transform.position + new Vector3(Random.Range(-200, 200) / 100, 0, 0));
     }
 		
 
@@ -55,6 +55,18 @@ public class RedEnemy : Enemy
             animator.SetTrigger("Attack");
             yield return new WaitForSeconds(2);
             yield return StartCoroutine(MoveToPos(doorway.DoorStartPoint.position));
+            doorway.Close();
+        }
+
+        if (door is DoubleDoor)
+        {
+            DoubleDoor doorway = door as DoubleDoor;
+            doorway.Open();
+
+            transform.position = doorway.startPoint.position;
+            yield return new WaitForSeconds(1);
+            animator.SetTrigger("Attack");
+            yield return new WaitForSeconds(2);
             doorway.Close();
         }
 
