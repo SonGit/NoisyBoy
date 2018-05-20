@@ -22,7 +22,7 @@ public class RedEnemy : Enemy
 		ThrowObject sandalA = ObjectPool.instance.GetSandalA();
 		sandalA.transform.position = shootPoint.position;
         //sandalA.Launch(transform.position + transform.forward * .4f);
-        sandalA.Launch(Player.instance.transform.position + new Vector3(Random.Range(-200, 200) / 100, 0, 0));
+        sandalA.Launch(Player.instance.transform.position + new Vector3(Random.Range(-100, 100) / 100f, 0, 0));
     }
 		
 
