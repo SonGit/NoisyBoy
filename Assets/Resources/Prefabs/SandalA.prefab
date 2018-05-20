@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33341943072885674}
   - component: {fileID: 23098088592080414}
   - component: {fileID: 96265010743131726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4873653690924192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 54669580140479382}
   - component: {fileID: 136243790244134560}
   - component: {fileID: 114655667461959140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SandalA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,7 +82,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1655401679327818}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.768, y: 0.791, z: 0.012}
+  m_LocalPosition: {x: 0.768, y: 0.791, z: -0.095}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4873653690924192}
@@ -118,7 +118,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 3704adbfe072cf54ab6403e5d0637633, type: 2}
+  - {fileID: 2100000, guid: 464e7804ccdd9694db7469ad794870a7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

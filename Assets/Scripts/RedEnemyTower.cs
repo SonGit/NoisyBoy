@@ -40,6 +40,7 @@ public class RedEnemyTower : Enemy
 		ThrowObject sandalA = ObjectPool.instance.GetSandalA();
         sandalA.transform.position = shootPoint.position;
         Vector3 pos = (transform.position + transform.forward * .4f);
-        sandalA.Launch(new Vector3(pos.x, 0.0565f, pos.z));
+        //sandalA.Launch(new Vector3(pos.x, 0.0565f, pos.z));
+        sandalA.Launch(Player.instance.transform.position);
     }
 }
