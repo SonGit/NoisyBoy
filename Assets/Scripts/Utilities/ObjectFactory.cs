@@ -27,7 +27,8 @@ public class ObjectFactory: MonoBehaviour {
 		Bread,
 		Hammer,
 		Pot,
-		CFXM_Hit_Green
+        PickupParticle,
+        CFXM_Hit_Green
 	}
 
 	public Dictionary<PrefabType,string> PrefabPaths = new Dictionary<PrefabType, string> {
@@ -42,8 +43,8 @@ public class ObjectFactory: MonoBehaviour {
 		{ PrefabType.Bread, "Prefabs/Bread" },
 		{ PrefabType.Hammer, "Prefabs/Hammer" },
 		{ PrefabType.Pot, "Prefabs/Pot" },
-
-	};
+        { PrefabType.PickupParticle, "Prefabs/PickupParticle" },
+    };
 
 	public GameObject MakeObject(PrefabType type)
 	{

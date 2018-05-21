@@ -64,15 +64,27 @@ public class ThrowObject : Cacheable {
 		isKillPlayer = true;
     }
 
+    ThrowObject otherObj;
     void OnCollisionEnter(Collision collision)
     {
 		if (Player.instance.CheckIfAPlayer (collision.transform)) {
 			Player.instance.OnHitThrowObj (GetComponent<ThrowObject> ());
 		} else {
-			isKillPlayer = false;
-			trailRenderer.enabled = false;
-			//Invoke ("StartPoofEffect",5);
-			StartCoroutine(StartPoofEffect());
+
+            otherObj = collision.transform.GetComponent<ThrowObject>();
+
+            //if hit by another throw obj
+            if(otherObj != null)
+            {
+
+            }
+            else
+            {
+                isKillPlayer = false;
+                trailRenderer.enabled = false;
+                //Invoke ("StartPoofEffect",5);
+                StartCoroutine(StartPoofEffect());
+            }
 		}
     }
 
@@ -119,18 +131,28 @@ public class ThrowObject : Cacheable {
     public override void OnLive()
     {
         gameObject.SetActive(true);
+        transform.position = new Vector3(999, 999, 999);
     }
 
     public override void OnDestroy()
     {
+
         gameObject.SetActive(false);
+        StopAllCoroutines();
     }
 
-	public void PoofEffect(Transform pos)
+    public void PickedUp()
+    {
+        PickupParticle pickupParticle = ObjectPool.instance.GetPickupParticle();
+        pickupParticle.transform.position = new Vector3(transform.position.x, 0.153f, transform.position.z);
+        trailRenderer.enabled = false;
+        transform.position = new Vector3(999, 999, 999);
+    }
+
+    public void PoofEffect(Transform pos)
 	{
 		PoofEffect poofEffect = ObjectPool.instance.GetPoofEffect ();
 		poofEffect.transform.position = pos.position;
-		poofEffect.Destroy ();
 		Destroy ();
 	}
 

@@ -12,9 +12,9 @@ public class Player : MonoBehaviour {
 	public static int Score = 0;
 	public static int highScore;
 	public Text lifeText;
+    public Text scoreText;
 
-
-	private int maxLife = 100;
+    private int maxLife = 100;
 	private bool isPlayerUndying;
 	private float playerUndyingTimeCount;
 	private Renderer[] playerRenderers;
@@ -34,8 +34,9 @@ public class Player : MonoBehaviour {
 	void Update () {
 
 		lifeText.text = "Live: " + currentLife;
+        scoreText.text = "Score: " + Score;
 
-		if (!isPlayerUndying) {
+        if (!isPlayerUndying) {
 			return;
 		}
 
@@ -108,5 +109,18 @@ public class Player : MonoBehaviour {
 		return false;
 	}
 
+    ThrowObject throwObj;
+    void OnTriggerStay(Collider other)
+    {
+        throwObj = other.GetComponent<ThrowObject>();
+        if(throwObj != null)
+        {
+            if(!throwObj.isKillPlayer)
+            {
+                throwObj.PickedUp();
+                Score++;
+            }
+        }
 
+    }
 }

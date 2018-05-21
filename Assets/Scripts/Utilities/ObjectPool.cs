@@ -22,7 +22,9 @@ public class ObjectPool : MonoBehaviour {
 
 	GenericObject<PoofEffect> poofEffect;
 
-	GenericObject<CFXM_Hit_Green> CFXM_Hit_Green;
+    GenericObject<PickupParticle> pickupEffect;
+
+    GenericObject<CFXM_Hit_Green> CFXM_Hit_Green;
 
     void Awake()
 	{
@@ -39,6 +41,7 @@ public class ObjectPool : MonoBehaviour {
 		bread = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Bread,1);
 		hammer = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Hammer,1);
 		pot = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Pot,1);
+        pickupEffect = new GenericObject<PickupParticle>(ObjectFactory.PrefabType.PickupParticle, 3);
     }
 		
 
@@ -81,4 +84,9 @@ public class ObjectPool : MonoBehaviour {
 	{
 		return pot.GetObj ();
 	}
+
+    public PickupParticle GetPickupParticle()
+    {
+        return pickupEffect.GetObj();
+    }
 }

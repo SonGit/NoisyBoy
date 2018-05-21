@@ -13,14 +13,22 @@ public class PoofEffect : Cacheable {
 
 	public override void OnLive ()
 	{
-		particles = this.GetComponentsInChildren<ParticleSystem> ();
+        gameObject.SetActive(true);
+        particles = this.GetComponentsInChildren<ParticleSystem> ();
 		foreach (ParticleSystem particle in particles) {
 			particle.Play ();
 		}
-	}
+        StartCoroutine(Countdown());
+    }
 
 	public override void OnDestroy ()
 	{
-		
-	}
+        gameObject.SetActive(false);
+    }
+
+    IEnumerator Countdown()
+    {
+        yield return new WaitForSeconds(1);
+        Destroy();
+    }
 }

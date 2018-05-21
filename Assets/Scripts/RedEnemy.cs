@@ -46,7 +46,19 @@ public class RedEnemy : Enemy
 			
 		throwObj.transform.position = shootPoint.position;
         //sandalA.Launch(transform.position + transform.forward * .4f);
-		throwObj.Launch(Player.instance.transform.position + new Vector3(Random.Range(-100, 100) / 100f, 0, 0));
+
+        float distanceToPlayer = Vector3.Distance(transform.position,Player.instance.transform.position);
+
+        if(distanceToPlayer > 0.85f)
+        {
+            Vector3 landingPos = transform.position + transform.forward * .4f;
+            landingPos = new Vector3(landingPos.x, 0.0565f, landingPos.z);
+            throwObj.Launch(landingPos);
+        }
+        else
+        {
+            throwObj.Launch(Player.instance.transform.position + new Vector3(Random.Range(-100, 100) / 100f, 0, 0));
+        }
     }
 		
 

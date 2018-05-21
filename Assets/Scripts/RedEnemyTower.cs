@@ -64,7 +64,7 @@ public class RedEnemyTower : Enemy
 
 
 		throwObj.transform.position = shootPoint.position;
-        Vector3 pos = (transform.position + transform.forward * .4f);
+       // Vector3 pos = (transform.position + transform.forward * .4f);
         //sandalA.Launch(new Vector3(pos.x, 0.0565f, pos.z));
        // sandalA.Launch(Player.instance.transform.position);
 		throwObj.Launch(Player.instance.transform.position);
