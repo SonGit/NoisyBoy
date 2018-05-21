@@ -21,11 +21,9 @@ public class ObjectFactory: MonoBehaviour {
 		Enemy,
 		AudioSource,
 		Explosion1,
-		Explosion2,
-		Explosion3,
-		Explosion4,
-		ScoreAddText,
-		Sandal
+		PoofEffect,
+		Sandal,
+		CFXM_Hit_Green
 	}
 
 	public Dictionary<PrefabType,string> PrefabPaths = new Dictionary<PrefabType, string> {
@@ -34,11 +32,9 @@ public class ObjectFactory: MonoBehaviour {
 		{ PrefabType.Enemy, "Prefabs/Enemy" },
 		{ PrefabType.AudioSource, "Prefabs/AudioSource" },
 		{ PrefabType.Explosion1, "Prefabs/Explosion1" },
-		{ PrefabType.Explosion2, "Prefabs/Explosion2" },
-		{ PrefabType.Explosion3, "Prefabs/Explosion3" },
-		{ PrefabType.Explosion4, "Prefabs/Explosion4" },
-		{ PrefabType.ScoreAddText, "Prefabs/ScoreAddText" },
-		{ PrefabType.Sandal, "Prefabs/Sandal" },
+		{ PrefabType.PoofEffect, "Prefabs/PoofEffect" },
+		{ PrefabType.Sandal, "Prefabs/SandalA" },
+		{ PrefabType.CFXM_Hit_Green, "Prefabs/CFXM_Hit_Green" },
 	};
 
 	public GameObject MakeObject(PrefabType type)

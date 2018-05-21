@@ -29,7 +29,6 @@ public class EnemyManager : MonoBehaviour {
         if(freeWindow.Count == 0)
         {
             Debug.Log("NO WINDOWS FOUND!");
-            return;
         }
 
         int ran = Random.Range(0, freeWindow.Count);
@@ -51,7 +50,7 @@ public class EnemyManager : MonoBehaviour {
                 freeWindows.Add(door);
             }
         }
-		Debug.Log (freeWindows.Count);
+
         return freeWindows;
     }
 }

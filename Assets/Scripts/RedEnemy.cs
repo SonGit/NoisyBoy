@@ -19,11 +19,11 @@ public class RedEnemy : Enemy
 
     public override void AttackEvent()
     {
-        Sandal sandal = ObjectPool.instance.GetSandal();
-        sandal.transform.position = shootPoint.position;
-        Vector3 pos = (transform.position + transform.forward * .4f);
-        sandal.Launch(new Vector3(pos.x, 0.0565f, pos.z));
+		ThrowObject sandalA = ObjectPool.instance.GetSandalA();
+		sandalA.transform.position = shootPoint.position;
+		sandalA.Launch(transform.position + transform.forward * .4f);
     }
+		
 
     IEnumerator AttackSequence(Door door)
     {
@@ -55,20 +55,6 @@ public class RedEnemy : Enemy
             yield return new WaitForSeconds(2);
             yield return StartCoroutine(MoveToPos(doorway.DoorStartPoint.position));
             doorway.Close();
-        }
-
-        if (door is DoubleDoor)
-        {
-            DoubleDoor window = door as DoubleDoor;
-            window.Open();
-
-            transform.position = window.startPoint.position;
-
-            yield return new WaitForSeconds(2.2f);
-            animator.SetTrigger("Attack");
-            yield return new WaitForSeconds(2);
-
-            window.Close();
         }
 
         yield return new WaitForSeconds(1);

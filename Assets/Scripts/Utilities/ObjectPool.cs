@@ -8,9 +8,13 @@ public class ObjectPool : MonoBehaviour {
 
 	public static ObjectPool instance;
 
-	GenericObject<Sandal> sandal;
+	GenericObject<ThrowObject> sandalA;
 
     GenericObject<RedEnemy> redEnemies;
+
+	GenericObject<PoofEffect> poofEffect;
+
+	GenericObject<CFXM_Hit_Green> CFXM_Hit_Green;
 
     void Awake()
 	{
@@ -20,18 +24,29 @@ public class ObjectPool : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-		sandal = new GenericObject<Sandal>(ObjectFactory.PrefabType.Sandal,2);
-        redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy,5);
-
+		sandalA = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Sandal,1);
+        redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy,2);
+		poofEffect = new GenericObject<PoofEffect>(ObjectFactory.PrefabType.PoofEffect,2);
+		CFXM_Hit_Green = new GenericObject<CFXM_Hit_Green>(ObjectFactory.PrefabType.CFXM_Hit_Green,1);
     }
 		
-	public Sandal GetSandal()
+	public ThrowObject GetSandalA()
 	{
-		return sandal.GetObj ();
+		return sandalA.GetObj ();
 	}
 
     public RedEnemy GetRedEnemy()
     {
         return redEnemies.GetObj();
     }
+
+	public PoofEffect GetPoofEffect()
+	{
+		return poofEffect.GetObj();
+	}
+
+	public CFXM_Hit_Green GetCFXM_Hit_Green()
+	{
+		return CFXM_Hit_Green.GetObj();
+	}
 }
