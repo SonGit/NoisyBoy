@@ -20,9 +20,11 @@ public class ThrowObject : Cacheable {
 
 	public bool isKillPlayer;
 
-    public float timeToPool;
 
-    float timeToPoolCount;
+    void OnEnable()
+    {
+		
+    }
 
     void Update()
     {
@@ -31,17 +33,7 @@ public class ThrowObject : Cacheable {
         {
             DrawPath();
         }
-
-        if(!isKillPlayer)
-        {
-            timeToPoolCount -= Time.deltaTime;
-
-            if (timeToPoolCount <= 0)
-            {
-                PoofEffect();
-            }
-        }
-
+		
     }
 
     void Init()
@@ -51,8 +43,7 @@ public class ThrowObject : Cacheable {
         rb.useGravity = false;
         onEnable = true;
         hasInit = true;
-        timeToPool = 4;
-        timeToPoolCount = timeToPool;
+
     }
 		
 
@@ -64,16 +55,13 @@ public class ThrowObject : Cacheable {
         }
 
         this.target = target;
-        timeToPoolCount = timeToPool;
-
         Physics.gravity = Vector3.up * gravity;
         rb.useGravity = true;
-
-        isKillPlayer = true;
-
         rb.velocity = CalculateLaunchData().initialVelocity;
 
         trailRenderer.enabled = true;
+
+		isKillPlayer = true;
     }
 
     ThrowObject otherObj;
@@ -81,8 +69,7 @@ public class ThrowObject : Cacheable {
     {
 		if (Player.instance.CheckIfAPlayer (collision.transform)) {
 			Player.instance.OnHitThrowObj (GetComponent<ThrowObject> ());
-         
-        } else {
+		} else {
 
             otherObj = collision.transform.GetComponent<ThrowObject>();
 
@@ -95,6 +82,8 @@ public class ThrowObject : Cacheable {
             {
                 isKillPlayer = false;
                 trailRenderer.enabled = false;
+                //Invoke ("StartPoofEffect",5);
+                StartCoroutine(StartPoofEffect());
             }
 		}
     }
@@ -136,48 +125,55 @@ public class ThrowObject : Cacheable {
             this.initialVelocity = initialVelocity;
             this.timeToTarget = timeToTarget;
         }
+
     }
 
     public override void OnLive()
     {
         gameObject.SetActive(true);
-
-        if (trailRenderer != null)
-            trailRenderer.Clear();
-        timeToPoolCount = 0;
+        transform.position = new Vector3(999, 999, 999);
     }
 
     public override void OnDestroy()
     {
-        transform.position = Vector3.one * 999;
+
         gameObject.SetActive(false);
-        if(trailRenderer != null)
-            trailRenderer.Clear();
-        timeToPoolCount = 0;
+        StopAllCoroutines();
     }
 
     public void PickedUp()
     {
         PickupParticle pickupParticle = ObjectPool.instance.GetPickupParticle();
         pickupParticle.transform.position = new Vector3(transform.position.x, 0.153f, transform.position.z);
-
-        Destroy();
+        trailRenderer.enabled = false;
+        transform.position = new Vector3(999, 999, 999);
     }
 
-    public void PoofEffect()
+    public void PoofEffect(Transform pos)
 	{
 		PoofEffect poofEffect = ObjectPool.instance.GetPoofEffect ();
-        poofEffect.transform.position = new Vector3(transform.position.x, 0.153f,transform.position.z);
+		poofEffect.transform.position = pos.position;
+		StartCoroutine (WaitDestroy());
+	}
 
-        Destroy();
-    }
+	IEnumerator StartPoofEffect ()
+	{
+		yield return new WaitForSeconds (4);
+		PoofEffect (transform);
+	}
 
 	public void CFXM_Hit_GreenEffect(Transform pos)
 	{
 		CFXM_Hit_Green CFXM_Hit_Green = ObjectPool.instance.GetCFXM_Hit_Green ();
 		CFXM_Hit_Green.transform.position = pos.position;
 		CFXM_Hit_Green.Destroy ();
+		StartCoroutine (WaitDestroy());
+	}
 
-        Destroy();
-    }
+	IEnumerator WaitDestroy ()
+	{
+		yield return new WaitForSeconds (0.06f);
+		Destroy ();
+	}
+
 }

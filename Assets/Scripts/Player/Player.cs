@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	public Text lifeText;
     public Text scoreText;
 
-    private int maxLife = 100;
+    private int maxLife = 3;
 	private bool isPlayerUndying;
 	private float playerUndyingTimeCount;
 	private Renderer[] playerRenderers;
@@ -69,7 +69,12 @@ public class Player : MonoBehaviour {
 			}
 			else
 			{
-				Debug.Log ("Die");
+				StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
+				GameManager.instance.ShowGameOver ();
+				StartCoroutine( WaitDestroyPlayer ());
+				RedEnemyTower.instance.PauseSpawn ();
+				EnemyManager.instance.PauseSpawn ();
+				PlayerController.instance.enabled = false;
 
 			}
 		}
@@ -123,4 +128,14 @@ public class Player : MonoBehaviour {
         }
 
     }
+
+	private IEnumerator WaitDestroyPlayer ()
+	{
+
+		foreach (Renderer renderer in playerRenderers) 
+		{
+			yield return new WaitForSeconds (0.05f);
+			renderer.gameObject.SetActive (false);
+		}
+	}
 }
