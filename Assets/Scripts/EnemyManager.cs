@@ -8,6 +8,8 @@ public class EnemyManager : MonoBehaviour {
 
     public float rate;
 
+    public float degradeRate;
+
     Door[] doors;
 
 	// Use this for initialization
@@ -22,6 +24,13 @@ public class EnemyManager : MonoBehaviour {
             yield return new WaitForSeconds(sec);
         }
       
+    }
+
+    void Update()
+    {
+        rate -= Time.deltaTime * degradeRate;
+        if (rate <= .5f)
+            rate = .5f;
     }
 	
 	public void Spawn()
