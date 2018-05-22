@@ -153,7 +153,7 @@ public class ThrowObject : Cacheable {
 	{
 		PoofEffect poofEffect = ObjectPool.instance.GetPoofEffect ();
 		poofEffect.transform.position = pos.position;
-		Destroy ();
+		StartCoroutine (WaitDestroy());
 	}
 
 	IEnumerator StartPoofEffect ()
@@ -167,6 +167,12 @@ public class ThrowObject : Cacheable {
 		CFXM_Hit_Green CFXM_Hit_Green = ObjectPool.instance.GetCFXM_Hit_Green ();
 		CFXM_Hit_Green.transform.position = pos.position;
 		CFXM_Hit_Green.Destroy ();
+		StartCoroutine (WaitDestroy());
+	}
+
+	IEnumerator WaitDestroy ()
+	{
+		yield return new WaitForSeconds (0.06f);
 		Destroy ();
 	}
 

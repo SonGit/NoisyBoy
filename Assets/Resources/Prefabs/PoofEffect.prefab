@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 198408853429344612}
   - component: {fileID: 199306494958999916}
   - component: {fileID: 114846021149773752}
-  - component: {fileID: 114003068528532608}
+  - component: {fileID: 114664703722603302}
   m_Layer: 0
   m_Name: PoofEffect
   m_TagString: FxTemporaire
@@ -107,17 +107,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114003068528532608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1662365131676816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eddf54955d211e04fa9403ace1fe6d05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114179436306065636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,6 +131,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   OnlyDeactivate: 0
+--- !u!114 &114664703722603302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1662365131676816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7995d0d78aea5e842a5ee598bb9b4242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114846021149773752
 MonoBehaviour:
   m_ObjectHideFlags: 1

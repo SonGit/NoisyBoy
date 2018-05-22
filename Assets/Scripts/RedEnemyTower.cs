@@ -4,21 +4,58 @@ using UnityEngine;
 
 public class RedEnemyTower : Enemy
 {
+	public static RedEnemyTower instance;
+
     public Transform shootPoint;
 
     public float rateOfFire;
 
+	public bool isSpawn;
+
+	public RedEnemyTower[] redEnemyTower;
+
+	GameObject[] gameObjects;
+
+	void Awake ()
+	{
+		instance = this;
+	}
+
     // Use this for initialization
     void Start()
     {
+		isSpawn = false;
+
+		gameObjects = GameObject.FindGameObjectsWithTag ("RedEnemyTower");
+		redEnemyTower = new RedEnemyTower[gameObjects.Length];
+
         base.Start();
-        animator = this.GetComponent<Animator>();
-        Attack(null);
+     
     }
     // Update is called once per frame
     void Update () {
 		
 	}
+
+	public void StartSpawn ()
+	{
+		for (int i = 0; i < gameObjects.Length; i++) {
+			redEnemyTower [i] = gameObjects [i].GetComponent<RedEnemyTower> ();
+			redEnemyTower [i].isSpawn = true;
+			redEnemyTower [i].Attack(null);
+		}
+
+
+	}
+
+	public void PauseSpawn ()
+	{
+		for (int i = 0; i < gameObjects.Length; i++) {
+			redEnemyTower [i] = gameObjects [i].GetComponent<RedEnemyTower> ();
+			redEnemyTower [i].isSpawn = false;
+		}
+	}
+
 
     public override void Attack(Door door)
     {
@@ -27,7 +64,7 @@ public class RedEnemyTower : Enemy
 
     IEnumerator AttackSequence(Door door)
     {
-        while(true)
+		while(isSpawn)
         {
             yield return new WaitForSeconds(2.2f);
             animator.SetTrigger("Attack");

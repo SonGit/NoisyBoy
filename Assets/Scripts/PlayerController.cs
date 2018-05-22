@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
+	public static PlayerController instance;
+
     public float Speed = 2;
 
     public float TurnSpeed = 5;
@@ -13,6 +15,11 @@ public class PlayerController : MonoBehaviour {
 	public VirtualJoystick joystick;
 
     Transform t;
+
+	void Awake()
+	{
+		instance = this;
+	}
 
 	// Use this for initialization
 	void Start () {

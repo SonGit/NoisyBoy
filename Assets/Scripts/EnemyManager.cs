@@ -4,18 +4,38 @@ using UnityEngine;
 
 public class EnemyManager : MonoBehaviour {
 
+	public static EnemyManager instance;
+
     public GameObject buildingObj;
 
     public float rate;
 
+	public bool isSpawn;
+
     Door[] doors;
 
+	void Awake()
+	{
+		instance = this;
+	}
+
+	void Start()
+	{
+		isSpawn = false;
+	}
+		
+	public void PauseSpawn ()
+	{
+		isSpawn = false;
+	}
+
 	// Use this for initialization
-	IEnumerator Start () {
+	public IEnumerator StartSpawn () {
+		isSpawn = true;
         doors = buildingObj.GetComponentsInChildren<Door>();
         yield return new WaitForSeconds(1);
 
-        while(true)
+		while(isSpawn)
         {
             Spawn();
             float sec = (rate + (Random.Range(0, 1000)) / 1000f);
@@ -24,7 +44,7 @@ public class EnemyManager : MonoBehaviour {
       
     }
 	
-	public void Spawn()
+	private void Spawn()
     {
         List<Door> freeWindow = GetFreeWindows();
         if(freeWindow.Count == 0)
