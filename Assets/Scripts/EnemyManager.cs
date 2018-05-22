@@ -12,6 +12,8 @@ public class EnemyManager : MonoBehaviour {
 
 	public bool isSpawn;
 
+    public float degradeRate;
+
     Door[] doors;
 
 	void Awake()
@@ -23,6 +25,12 @@ public class EnemyManager : MonoBehaviour {
 	{
 		isSpawn = false;
 	}
+
+    void Update()
+    {
+        if(isSpawn)
+        rate -= Time.deltaTime * degradeRate;
+    }
 		
 	public void PauseSpawn ()
 	{
