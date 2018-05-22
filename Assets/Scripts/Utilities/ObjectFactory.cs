@@ -22,7 +22,11 @@ public class ObjectFactory: MonoBehaviour {
 		AudioSource,
 		Explosion1,
 		PoofEffect,
-		Sandal,
+		SandalA,
+		SandalB,
+		Bread,
+		Hammer,
+		Pot,
 		CFXM_Hit_Green
 	}
 
@@ -31,10 +35,14 @@ public class ObjectFactory: MonoBehaviour {
 		{ PrefabType.None, "" },
 		{ PrefabType.Enemy, "Prefabs/Enemy" },
 		{ PrefabType.AudioSource, "Prefabs/AudioSource" },
-		{ PrefabType.Explosion1, "Prefabs/Explosion1" },
 		{ PrefabType.PoofEffect, "Prefabs/PoofEffect" },
-		{ PrefabType.Sandal, "Prefabs/SandalA" },
 		{ PrefabType.CFXM_Hit_Green, "Prefabs/CFXM_Hit_Green" },
+		{ PrefabType.SandalA, "Prefabs/SandalA" },
+		{ PrefabType.SandalB, "Prefabs/SandalB" },
+		{ PrefabType.Bread, "Prefabs/Bread" },
+		{ PrefabType.Hammer, "Prefabs/Hammer" },
+		{ PrefabType.Pot, "Prefabs/Pot" },
+
 	};
 
 	public GameObject MakeObject(PrefabType type)

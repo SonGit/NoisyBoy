@@ -10,6 +10,14 @@ public class ObjectPool : MonoBehaviour {
 
 	GenericObject<ThrowObject> sandalA;
 
+	GenericObject<ThrowObject> sandalB;
+
+	GenericObject<ThrowObject> bread;
+
+	GenericObject<ThrowObject> hammer;
+
+	GenericObject<ThrowObject> pot;
+
     GenericObject<RedEnemy> redEnemies;
 
 	GenericObject<PoofEffect> poofEffect;
@@ -23,17 +31,16 @@ public class ObjectPool : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-		sandalA = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Sandal,1);
         redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy,2);
-		poofEffect = new GenericObject<PoofEffect>(ObjectFactory.PrefabType.PoofEffect,2);
-		CFXM_Hit_Green = new GenericObject<CFXM_Hit_Green>(ObjectFactory.PrefabType.CFXM_Hit_Green,1);
+		poofEffect = new GenericObject<PoofEffect>(ObjectFactory.PrefabType.PoofEffect,4);
+		CFXM_Hit_Green = new GenericObject<CFXM_Hit_Green>(ObjectFactory.PrefabType.CFXM_Hit_Green,4);
+		sandalA = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalA,1);
+		sandalB = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalB,1);
+		bread = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Bread,1);
+		hammer = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Hammer,1);
+		pot = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Pot,1);
     }
 		
-	public ThrowObject GetSandalA()
-	{
-		return sandalA.GetObj ();
-	}
 
     public RedEnemy GetRedEnemy()
     {
@@ -48,5 +55,30 @@ public class ObjectPool : MonoBehaviour {
 	public CFXM_Hit_Green GetCFXM_Hit_Green()
 	{
 		return CFXM_Hit_Green.GetObj();
+	}
+
+	public ThrowObject GetSandalA()
+	{
+		return sandalA.GetObj ();
+	}
+
+	public ThrowObject GetSandalB()
+	{
+		return sandalB.GetObj ();
+	}
+
+	public ThrowObject GetBread()
+	{
+		return bread.GetObj ();
+	}
+
+	public ThrowObject GetHammer()
+	{
+		return hammer.GetObj ();
+	}
+
+	public ThrowObject GetPot()
+	{
+		return pot.GetObj ();
 	}
 }

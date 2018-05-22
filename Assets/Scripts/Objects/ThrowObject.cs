@@ -145,6 +145,7 @@ public class ThrowObject : Cacheable {
 		CFXM_Hit_Green CFXM_Hit_Green = ObjectPool.instance.GetCFXM_Hit_Green ();
 		CFXM_Hit_Green.transform.position = pos.position;
 		CFXM_Hit_Green.Destroy ();
+		Destroy ();
 	}
 
 }

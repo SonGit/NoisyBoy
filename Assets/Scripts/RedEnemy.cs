@@ -19,10 +19,34 @@ public class RedEnemy : Enemy
 
     public override void AttackEvent()
     {
-		ThrowObject sandalA = ObjectPool.instance.GetSandalA();
-		sandalA.transform.position = shootPoint.position;
+		ThrowObject throwObj;
+
+		int rand = Random.Range (0,5);
+
+		switch (rand) {
+		case 0:
+			throwObj = ObjectPool.instance.GetSandalA ();
+			break;
+		case 1:
+			throwObj = ObjectPool.instance.GetSandalB ();
+			break;
+		case 2:
+			throwObj = ObjectPool.instance.GetBread ();
+			break;
+		case 3:
+			throwObj = ObjectPool.instance.GetHammer ();
+			break;
+		case 4:
+			throwObj = ObjectPool.instance.GetPot ();
+			break;
+		default:
+			throwObj = ObjectPool.instance.GetSandalA ();
+			break;
+		}
+			
+		throwObj.transform.position = shootPoint.position;
         //sandalA.Launch(transform.position + transform.forward * .4f);
-        sandalA.Launch(Player.instance.transform.position + new Vector3(Random.Range(-100, 100) / 100f, 0, 0));
+		throwObj.Launch(Player.instance.transform.position + new Vector3(Random.Range(-100, 100) / 100f, 0, 0));
     }
 		
 
