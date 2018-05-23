@@ -33,6 +33,9 @@ public class ThrowObject : Cacheable {
         {
             DrawPath();
         }
+
+        if (isKillPlayer)
+            transform.eulerAngles += new Vector3(1, 0, 1) * Time.deltaTime * 50;
 		
     }
 
@@ -147,7 +150,10 @@ public class ThrowObject : Cacheable {
     {
         if (trailRenderer != null)
             trailRenderer.Clear();
+
+        transform.eulerAngles = Vector3.zero;
         gameObject.SetActive(false);
+
         StopAllCoroutines();
     }
 

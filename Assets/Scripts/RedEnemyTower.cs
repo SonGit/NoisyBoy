@@ -99,16 +99,17 @@ public class RedEnemyTower : Enemy
 			break;
 		}
 
-
-		throwObj.transform.position = shootPoint.position;
+        if (Player.instance.currentLife > 0)
+        {
+            AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.Whoosh, transform.position);
+        }
+        throwObj.transform.position = shootPoint.position;
        // Vector3 pos = (transform.position + transform.forward * .4f);
         //sandalA.Launch(new Vector3(pos.x, 0.0565f, pos.z));
        // sandalA.Launch(Player.instance.transform.position);
 		throwObj.Launch(Player.instance.transform.position);
 
-		if (Player.instance.currentLife > 0) {
-			AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.Whoosh,transform.position);
-		}
+
 
     }
 }

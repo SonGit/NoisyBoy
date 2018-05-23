@@ -78,7 +78,7 @@ public class GameOverState : State {
 			PlayMusicGameOver ();
 			ObjAdsUnActive ();
 		}
-
+        if(countDownText !=null)
 		countDownText.text = "" + (int)countDownTime;
 	}
 
