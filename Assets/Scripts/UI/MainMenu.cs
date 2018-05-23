@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : State {
 
 //	public GameObject Main;
 //	public GameObject Setting;
@@ -90,10 +90,15 @@ public class MainMenu : MonoBehaviour {
 //	}
 
 
-	public void LoadLevel ()
+	public override void Enter ()
 	{
-		RedEnemyTower.instance.StartSpawn ();
-		StartCoroutine (EnemyManager.instance.StartSpawn ());
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+		gameObject.SetActive (true);
 	}
+
+	public override void Exit ()
+	{
+		gameObject.SetActive (false);
+	}
+
+
 }

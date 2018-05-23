@@ -3,13 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds.Api;
 
-public class AdBanner : MonoBehaviour {
+public class BannerAd : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
 		ShowBannerAd();
-
 	}
 
 	private void ShowBannerAd()
@@ -19,8 +17,8 @@ public class AdBanner : MonoBehaviour {
 
 		//***For Testing in the Device***
 		AdRequest request = new AdRequest.Builder()
-//			.AddTestDevice(AdRequest.TestDeviceSimulator)       // Simulator.
-//			.AddTestDevice("8F81DE33520C4C2A7C6EBEBFEB19D011")  // My test device.
+			.AddTestDevice(AdRequest.TestDeviceSimulator)       // Simulator.
+			.AddTestDevice("8F81DE33520C4C2A7C6EBEBFEB19D011")  // My test device.
 			.Build();
 
 		//***For Production When Submit App***

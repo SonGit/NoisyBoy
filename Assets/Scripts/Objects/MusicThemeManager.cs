@@ -24,7 +24,6 @@ public class MusicThemeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		DontDestroyOnLoad (gameObject);
 		stems [0].source.clip = stems [0].clip;
 		stems [0].source.Play ();
 

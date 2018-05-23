@@ -1,24 +1,19 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\ThrowObject.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\UI\GameManager.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player\Player.cs" Line="17" Column="28" />
-      <File FileName="Assets\Scripts\Objects\ThrowObject.cs" Line="159" Column="32" />
-      <File FileName="Assets\Scripts\RedEnemyTower.cs" Line="57" Column="3" />
-      <File FileName="Assets\Scripts\RedEnemy.cs" Line="111" Column="9" />
+      <File FileName="Assets\Scripts\UI\GameOverState.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\GamePlayState.cs" Line="24" Column="50" />
+      <File FileName="Assets\Scripts\UI\GameManager.cs" Line="23" Column="1" />
+      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\Setting.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Player\Player.cs" Line="72" Column="54" />
+      <File FileName="Assets\Scripts\UI\AdsManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\EnemyManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\GameManager.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\GameOver.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\UI\MainMenu.cs" Line="95" Column="3" />
-      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Door.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RedEnemyTower.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\LifeManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\UI\ShareImageCanvas.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\CFXM_Hit_Green.cs" Line="21" Column="23" />
-      <File FileName="Assets\Scripts\PoofEffect.cs" Line="32" Column="9" />
-      <File FileName="Assets\Scripts\Utilities\GenericObject.cs" Line="28" Column="7" />
-      <File FileName="Assets\Scripts\Utilities\Cacheable.cs" Line="26" Column="14" />
-      <File FileName="Assets\Scripts\Objects\AudioSource_RB.cs" Line="37" Column="4" />
-      <File FileName="Assets\Scripts\Objects\PickupParticle.cs" Line="19" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

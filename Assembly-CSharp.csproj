@@ -94,7 +94,6 @@
      <Compile Include="Assets\MobileColorGrading\Scripts\LB_LightingTrigger_Profile.cs" />
      <Compile Include="Assets\MobileColorGrading\Scripts\MobileColorGrading.cs" />
      <Compile Include="Assets\Pixelplacement\iTweenPath\iTweenPath.cs" />
-     <Compile Include="Assets\Pos.cs" />
      <Compile Include="Assets\Resources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo.cs" />
      <Compile Include="Assets\Resources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDir.cs" />
      <Compile Include="Assets\Resources\JMO Assets\Cartoon FX\Demo\Assets\CFX_Demo_RandomDirectionTranslate.cs" />
@@ -118,8 +117,6 @@
      <Compile Include="Assets\Scripts\Objects\AudioSource_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\CFXM_Hit_Green.cs" />
      <Compile Include="Assets\Scripts\Objects\DataController.cs" />
-     <Compile Include="Assets\Scripts\Objects\GameManager.cs" />
-     <Compile Include="Assets\Scripts\Objects\GameOver.cs" />
      <Compile Include="Assets\Scripts\Objects\MusicThemeManager.cs" />
      <Compile Include="Assets\Scripts\Objects\PickupParticle.cs" />
      <Compile Include="Assets\Scripts\Objects\ThrowObject.cs" />
@@ -132,14 +129,18 @@
      <Compile Include="Assets\Scripts\RedEnemyTower.cs" />
      <Compile Include="Assets\Scripts\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\SlowMo.cs" />
-     <Compile Include="Assets\Scripts\UI\AdBanner.cs" />
      <Compile Include="Assets\Scripts\UI\AdsManager.cs" />
+     <Compile Include="Assets\Scripts\UI\BannerAd.cs" />
      <Compile Include="Assets\Scripts\UI\FinalScoreUI.cs" />
+     <Compile Include="Assets\Scripts\UI\GameManager.cs" />
+     <Compile Include="Assets\Scripts\UI\GameOverState.cs" />
+     <Compile Include="Assets\Scripts\UI\GamePlayState.cs" />
      <Compile Include="Assets\Scripts\UI\LifeManager.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
      <Compile Include="Assets\Scripts\UI\ScreenShot.cs" />
      <Compile Include="Assets\Scripts\UI\Setting.cs" />
      <Compile Include="Assets\Scripts\UI\ShareImageCanvas.cs" />
+     <Compile Include="Assets\Scripts\UI\State.cs" />
      <Compile Include="Assets\Scripts\UI\VirtualJoystick.cs" />
      <Compile Include="Assets\Scripts\Utilities\Cacheable.cs" />
      <Compile Include="Assets\Scripts\Utilities\GenericObject.cs" />

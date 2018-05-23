@@ -12,8 +12,7 @@ public class AdsManager : MonoBehaviour {
 	private string gameId = "1792243";
 	//private string placementId = "rewardedVideo";
 	private string placementId = "rewardedVideo";
-	[HideInInspector]
-	public bool isAds;
+
 
 	void Awake ()
 	{
@@ -67,23 +66,16 @@ public class AdsManager : MonoBehaviour {
 
 	private void Rewardplayer ()
 	{
-//		isAds = true;
-//		Player.instance.currentLife ++;
-//		GameManager.instance.HideGameOver ();
-//		GameManager.instance.ObjAdsUnActive ();
-//		GameManager.instance.gamePlayUI.SetActive (true);
-//		GameManager.instance.objHighScore.SetActive (false);
-//		Player.instance.PlayerUndying ();
-//		EnemySpawner.instance.StartSpawn ();
-//		PlayerController_RB.instance.enabled = true;
-//		PlayerController_RB.instance.speed = PlayerController_RB.instance.startspeed;
-//		Player.instance.isAddScorePerSecond = true;
-//		MusicThemeManager.instance.PlayMusicMenuVsGamePLay ();
-//		VirtualJoystick.instance.ImgAnchor.transform.position = new Vector3(-20000,-20000,-20000);
-//		GameManager.instance.isCountdown = false;
-//		GameManager.instance.countDownTime = -1f;
-//		Planet.instance.GetComponent<Planet> ().enabled = true;
-
+		GameOverState.instance.isAds = true;
+		Player.instance.currentLife ++;
+		GameManager.instance.HideGameOver ();
+		GameManager.instance.ShowGamePlay ();
+		GameManager.instance.objHighScore.SetActive (false);
+		Player.instance.PlayerUndying ();
+		//MusicThemeManager.instance.PlayMusicMenuVsGamePLay ();
+		VirtualJoystick.instance.ImgAnchor.transform.position = new Vector3(-20000,-20000,-20000);
+		GameOverState.instance.isCountdown = false;
+		GameOverState.instance.countDownTime = -1f;
 	}
 		
 }
