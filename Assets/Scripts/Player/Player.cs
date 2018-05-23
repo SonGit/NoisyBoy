@@ -32,8 +32,9 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-		lifeText.text = "Live: " + currentLife;
+        if (lifeText != null)
+            lifeText.text = "Live: " + currentLife;
+        if(scoreText != null)
         scoreText.text = "Score: " + Score;
 
         if (!isPlayerUndying) {

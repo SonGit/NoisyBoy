@@ -130,13 +130,17 @@ public class ThrowObject : Cacheable {
 
     public override void OnLive()
     {
-        gameObject.SetActive(true);
+        if (trailRenderer != null)
+            trailRenderer.Clear();
         transform.position = new Vector3(999, 999, 999);
+
+        gameObject.SetActive(true);
     }
 
     public override void OnDestroy()
     {
-
+        if (trailRenderer != null)
+            trailRenderer.Clear();
         gameObject.SetActive(false);
         StopAllCoroutines();
     }

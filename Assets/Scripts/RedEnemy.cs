@@ -57,7 +57,7 @@ public class RedEnemy : Enemy
         }
         else
         {
-            throwObj.Launch(Player.instance.transform.position + new Vector3(Random.Range(-100, 100) / 100f, 0, 0));
+            throwObj.Launch(Player.instance.transform.position + new Vector3(Random.Range(-75, 75) / 100f, 0, 0));
         }
     }
 		
