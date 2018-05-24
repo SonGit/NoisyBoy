@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1345fc7ca5412f41b20f4782db730bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.125
+  speed: 0.17
 --- !u!119 &119222405986554658
 Projector:
   m_ObjectHideFlags: 1
@@ -183,11 +183,11 @@ Projector:
   m_Enabled: 1
   serializedVersion: 2
   m_NearClipPlane: 0.1
-  m_FarClipPlane: 5
+  m_FarClipPlane: 3
   m_FieldOfView: 20
   m_AspectRatio: 1
   m_Orthographic: 0
-  m_OrthographicSize: 2
+  m_OrthographicSize: 1
   m_Material: {fileID: 2100000, guid: e30ff3588e719f34bbf0c66f22d97487, type: 2}
   m_IgnoreLayers:
     serializedVersion: 2
