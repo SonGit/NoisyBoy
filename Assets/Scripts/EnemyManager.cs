@@ -38,6 +38,9 @@ public class EnemyManager : MonoBehaviour {
     {
         if(isSpawn)
         rate -= Time.deltaTime * degradeRate;
+
+        if (rate < .5f)
+            rate = .5f;
     }
 		
 	public void PauseSpawn ()
