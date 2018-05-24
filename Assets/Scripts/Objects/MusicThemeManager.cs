@@ -36,7 +36,7 @@ public class MusicThemeManager : MonoBehaviour {
 			if (isOnMusic == "f") {
 				stems [i].source.volume = 0;
 			} else if (isOnMusic == "t"){
-				stems [i].source.volume = 0.6f;
+				stems [i].source.volume = 0.5f;
 			}
 		}
 	}
@@ -45,6 +45,12 @@ public class MusicThemeManager : MonoBehaviour {
 	{
 		stems[0].source.clip = stems[0].clip;
 		stems [0].source.Play ();
+	}
+
+	public void StopMusicMenu ()
+	{
+		stems[0].source.clip = stems[0].clip;
+		stems [0].source.Stop ();
 	}
 
 	public void PlayMusicCar ()
@@ -58,6 +64,14 @@ public class MusicThemeManager : MonoBehaviour {
 		stems[3].source.clip = stems[3].clip;
 		stems [3].source.Stop ();
 	}
+
+	public void PlayMusicTapAm ()
+	{
+		Debug.Log ("1");
+		stems[5].source.clip = stems[5].clip;
+		stems [5].source.Play ();
+	}
+		
 
 	public void PlayMusicTrumpet ()
 	{
