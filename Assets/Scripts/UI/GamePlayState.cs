@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class GamePlayState : State {
 
+	public GameObject[] containerBtns;
+
+
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
@@ -20,9 +22,9 @@ public class GamePlayState : State {
 		RedEnemyTower.instance.StartSpawn ();
 		EnemyManager.instance.enabled = true;
 		PlayerController.instance.enabled = true;
-		PlayerController.instance.joystick.gameObject.SetActive(true);
 		GameManager.instance.objScore.SetActive (true);
 		MusicThemeManager.instance.PlayMusicTrumpet ();
+		MusicThemeManager.instance.PlayMusicTapAm ();
 	}
 
 	public override void Exit ()
@@ -31,6 +33,21 @@ public class GamePlayState : State {
 		RedEnemyTower.instance.PauseSpawn ();
 		EnemyManager.instance.enabled = false;
 		PlayerController.instance.enabled = false;
-		PlayerController.instance.joystick.gameObject.SetActive(false);
+	}
+
+	public void PauseBtn ()
+	{
+		PlayerController.instance.isPauseGame = true;
+		Time.timeScale = 0;
+		containerBtns [0].SetActive (false);
+		containerBtns [1].SetActive (true);
+	}
+
+	public void ResumeBtn ()
+	{
+		PlayerController.instance.isPauseGame = false;
+		Time.timeScale = 1;
+		containerBtns [0].SetActive (true);
+		containerBtns [1].SetActive (false);
 	}
 }

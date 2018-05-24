@@ -72,7 +72,6 @@ public class AdsManager : MonoBehaviour {
 		GameManager.instance.ShowGamePlay ();
 		GameManager.instance.objHighScore.SetActive (false);
 		Player.instance.PlayerUndying ();
-		//MusicThemeManager.instance.PlayMusicMenuVsGamePLay ();
 		VirtualJoystick.instance.ImgAnchor.transform.position = new Vector3(-20000,-20000,-20000);
 		GameOverState.instance.StopCountDown ();
 		MusicThemeManager.instance.PlayMusicMenu ();

@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
 
 	public VirtualJoystick joystick;
 
+	public bool isPauseGame;
+
     Transform t;
 
 	void Awake()
@@ -23,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		this.enabled = false;
         t = transform;
         t.eulerAngles = new Vector3(0,90,0);
         orientation = 1;
@@ -30,7 +33,10 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        AxisMovement();
+		if (!isPauseGame) {
+			AxisMovement();
+		}
+      
 
     }
 
