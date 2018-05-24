@@ -63,7 +63,7 @@ public class Player : MonoBehaviour {
 	{
 		if (!isPlayerUndying) 
 		{
-			currentLife -= 3;
+			currentLife -= 1;
 
 			if (currentLife > 0)
 			{
