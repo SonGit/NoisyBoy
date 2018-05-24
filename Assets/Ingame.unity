@@ -2847,10 +2847,6 @@ Prefab:
       propertyPath: m_Name
       value: CloudC (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4927075539822576, guid: 33c88900b5c93e846b7b34e09f8dd1dc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0.174
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 33c88900b5c93e846b7b34e09f8dd1dc, type: 2}
   m_IsPrefabParent: 0
@@ -3237,20 +3233,6 @@ Prefab:
     - target: {fileID: 4586256556583122, guid: 342dfc93527cb3e47b421a48d581cd36, type: 2}
       propertyPath: m_RootOrder
       value: 12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452737229565058, guid: 342dfc93527cb3e47b421a48d581cd36, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 23261847951206522, guid: 342dfc93527cb3e47b421a48d581cd36,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 23752164747092268, guid: 342dfc93527cb3e47b421a48d581cd36,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 342dfc93527cb3e47b421a48d581cd36, type: 2}
