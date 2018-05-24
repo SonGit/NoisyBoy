@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour {
 
     public float rate;
 
+	[HideInInspector]
 	public bool isSpawn;
 
     public float degradeRate;
@@ -19,9 +20,16 @@ public class EnemyManager : MonoBehaviour {
 	void Awake()
 	{
 		instance = this;
+		this.enabled = false;
 	}
 
-	void Start()
+	public void OnEnable ()
+	{
+		isSpawn = true;
+		StartCoroutine (StartSpawn());
+	}
+
+	public void OnDisable ()
 	{
 		isSpawn = false;
 	}
@@ -39,7 +47,6 @@ public class EnemyManager : MonoBehaviour {
 
 	// Use this for initialization
 	public IEnumerator StartSpawn () {
-		isSpawn = true;
         doors = buildingObj.GetComponentsInChildren<Door>();
         yield return new WaitForSeconds(1);
 

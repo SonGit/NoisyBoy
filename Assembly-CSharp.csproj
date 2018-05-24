@@ -116,6 +116,7 @@
      <Compile Include="Assets\Scripts\Objects\AudioManager_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\AudioSource_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\CFXM_Hit_Green.cs" />
+     <Compile Include="Assets\Scripts\Objects\Cloud.cs" />
      <Compile Include="Assets\Scripts\Objects\DataController.cs" />
      <Compile Include="Assets\Scripts\Objects\MusicThemeManager.cs" />
      <Compile Include="Assets\Scripts\Objects\PickupParticle.cs" />

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Player : MonoBehaviour {
 
@@ -11,8 +12,8 @@ public class Player : MonoBehaviour {
 	public int currentLife;
 	public static int Score = 0;
 	public static int highScore;
-	public Text lifeText;
-    public Text scoreText;
+
+	public TextMeshProUGUI scoreText;
 
     private int maxLife = 3;
 	private bool isPlayerUndying;
@@ -26,14 +27,14 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Score = 0;
 		currentLife = maxLife;
 		playerRenderers = rendererPlace.GetComponentsInChildren<Renderer> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (lifeText != null)
-            lifeText.text = "Live: " + currentLife;
+       
         if(scoreText != null)
         scoreText.text = "Score: " + Score;
 
@@ -70,12 +71,10 @@ public class Player : MonoBehaviour {
 			}
 			else
 			{
+				GameManager.instance.objHighScore.SetActive (true);
 				StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
 				GameManager.instance.ShowGameOver ();
 				StartCoroutine( WaitDestroyPlayer ());
-				RedEnemyTower.instance.PauseSpawn ();
-				EnemyManager.instance.PauseSpawn ();
-				PlayerController.instance.enabled = false;
 
 			}
 		}

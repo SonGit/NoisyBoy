@@ -71,6 +71,7 @@ public class GameManager : MonoBehaviour {
 	public void ReStartGame ()
 	{
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		Player.Score = 0;
 	}
 
 

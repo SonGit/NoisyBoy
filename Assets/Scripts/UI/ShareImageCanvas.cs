@@ -21,7 +21,7 @@ public class ShareImageCanvas : MonoBehaviour {
 		string filePath = Path.Combine( Application.persistentDataPath, "shared img.png" );
 		File.WriteAllBytes( filePath, ScreenShot.Instance.screenTexture.EncodeToPNG() );
 
-		new NativeShare().AddFile( filePath ).SetSubject( "CroRoll" ).SetText( "Check out this game!" ).Share();
+		new NativeShare().AddFile( filePath ).SetSubject( "NoisyBoy" ).SetText( "Check out this game!" ).Share();
 
 		// Share on WhatsApp only, if installed (Android only)
 		//if( NativeShare.TargetExists( "com.whatsapp" ) )
