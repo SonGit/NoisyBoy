@@ -76,10 +76,16 @@ public class ThrowObject : Cacheable {
             //if hit by another throw obj
             if(otherObj != null)
             {
-
+				if (Player.instance.currentLife > 0) {
+					AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.bup,transform.position);
+				}
             }
             else
             {
+				if (Player.instance.currentLife > 0) {
+					AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.bup,transform.position);
+				}
+
                 isKillPlayer = false;
                 trailRenderer.enabled = false;
                 //Invoke ("StartPoofEffect",5);
@@ -151,6 +157,7 @@ public class ThrowObject : Cacheable {
         pickupParticle.transform.position = new Vector3(transform.position.x, 0.153f, transform.position.z);
         trailRenderer.enabled = false;
         transform.position = new Vector3(999, 999, 999);
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.pickup,transform.position);
     }
 
     public void PoofEffect(Transform pos)

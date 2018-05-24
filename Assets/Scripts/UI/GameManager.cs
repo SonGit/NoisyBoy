@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
 
 	public void ShowGamePlay ()
 	{
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+
 		for (int i = 0; i < states.Length; i++) {
 			states [1].Enter ();
 			states [0].Exit ();
@@ -46,22 +48,27 @@ public class GameManager : MonoBehaviour {
 
 	public void HideGameOver ()
 	{
+		
 		for (int i = 0; i < states.Length; i++) {
 			states [2].Exit ();
 			states [1].Enter ();
 		}
 	}
 
-	public void ShowSetting ()
+	public void ShowSettingGameOver ()
 	{
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+
 		for (int i = 0; i < states.Length; i++) {
 			states [3].Enter ();
 			states [2].Exit ();
 		}
 	}
 
-	public void HideSetting ()
+	public void HideSettingGameOver ()
 	{
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+
 		for (int i = 0; i < states.Length; i++) {
 			states [3].Exit ();
 			states [2].Enter ();

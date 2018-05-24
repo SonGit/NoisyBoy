@@ -105,5 +105,10 @@ public class RedEnemyTower : Enemy
         //sandalA.Launch(new Vector3(pos.x, 0.0565f, pos.z));
        // sandalA.Launch(Player.instance.transform.position);
 		throwObj.Launch(Player.instance.transform.position);
+
+		if (Player.instance.currentLife > 0) {
+			AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.Whoosh,transform.position);
+		}
+
     }
 }

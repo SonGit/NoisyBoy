@@ -20,16 +20,15 @@ public class AudioManager_RB : MonoBehaviour {
 	{
 		
 
-		DontDestroyOnLoad (gameObject);
-
 		clips = new Dictionary<SoundFX, AudioClip> {
 
 			{ SoundFX.None, null },
-//			{ SoundFX.Click, Resources.Load<AudioClip>("Sounds/Click") },
-//			{ SoundFX.PlayerHurt, Resources.Load<AudioClip>("Sounds/PlayerHurt") },
-//			{ SoundFX.EnemyHit, Resources.Load<AudioClip>("Sounds/EnemyHit") },
-//			{ SoundFX.PlayerDeath, Resources.Load<AudioClip>("Sounds/PlayerDeath") },
-//			{ SoundFX.ButtonPresses, Resources.Load<AudioClip>("Sounds/ButtonPresses") },
+			{ SoundFX.pickup, Resources.Load<AudioClip>("Sounds/pickup") },
+			{ SoundFX.hitSound, Resources.Load<AudioClip>("Sounds/hitSound") },
+			{ SoundFX.PlayerDeath, Resources.Load<AudioClip>("Sounds/PlayerDeath") },
+			{ SoundFX.ButtonPresses, Resources.Load<AudioClip>("Sounds/ButtonPresses") },
+			{ SoundFX.Whoosh, Resources.Load<AudioClip>("Sounds/Whoosh") },
+			{ SoundFX.bup, Resources.Load<AudioClip>("Sounds/bup") },
 		};
 
 		yield return new WaitForSeconds (1);
@@ -38,11 +37,12 @@ public class AudioManager_RB : MonoBehaviour {
 	public enum SoundFX
 	{
 		None,
-		Click,
-		PlayerHurt,
-		EnemyHit,
+		hitSound,
 		PlayerDeath,
-		ButtonPresses
+		ButtonPresses,
+		pickup,
+		Whoosh,
+		bup
 	}
 
 	public void PlayClip(SoundFX soundFX,Vector3 worldPos)
@@ -54,7 +54,7 @@ public class AudioManager_RB : MonoBehaviour {
 			audio.audioSource.clip = clip;
 
 			if (isOnSound == "t") {
-				audio.audioSource.volume = 1;
+				audio.audioSource.volume = 0.6f;
 			} else if (isOnSound == "f"){
 				audio.audioSource.volume = 0;
 			}

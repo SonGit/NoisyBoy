@@ -35,7 +35,7 @@ public class ObjectPool : MonoBehaviour {
 	void Start () {
         redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy,2);
 		poofEffect = new GenericObject<PoofEffect>(ObjectFactory.PrefabType.PoofEffect,4);
-		CFXM_Hit_Green = new GenericObject<CFXM_Hit_Green>(ObjectFactory.PrefabType.CFXM_Hit_Green,4);
+		CFXM_Hit_Green = new GenericObject<CFXM_Hit_Green>(ObjectFactory.PrefabType.CFXM_Hit_Green,2);
 		sandalA = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalA,1);
 		sandalB = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalB,1);
 		bread = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Bread,1);

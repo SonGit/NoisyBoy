@@ -128,7 +128,6 @@
      <Compile Include="Assets\Scripts\PoofEffect.cs" />
      <Compile Include="Assets\Scripts\RedEnemy.cs" />
      <Compile Include="Assets\Scripts\RedEnemyTower.cs" />
-     <Compile Include="Assets\Scripts\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\SlowMo.cs" />
      <Compile Include="Assets\Scripts\UI\AdsManager.cs" />
      <Compile Include="Assets\Scripts\UI\BannerAd.cs" />
@@ -138,6 +137,7 @@
      <Compile Include="Assets\Scripts\UI\GamePlayState.cs" />
      <Compile Include="Assets\Scripts\UI\LifeManager.cs" />
      <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+     <Compile Include="Assets\Scripts\UI\ScoreUI.cs" />
      <Compile Include="Assets\Scripts\UI\ScreenShot.cs" />
      <Compile Include="Assets\Scripts\UI\Setting.cs" />
      <Compile Include="Assets\Scripts\UI\ShareImageCanvas.cs" />

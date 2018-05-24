@@ -19,26 +19,26 @@ public class Setting : State {
 
 	public void MusicOn()
 	{
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitMusicSetting ("f");
 
 	}
 
 	public void MusicOff()
 	{
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitMusicSetting ("t");
 	}
 
 	public void SoundOn()
 	{
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitSoundSetting ("f");
 	}
 
 	public void SoundOff()
 	{
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitSoundSetting ("t");
 	}
 

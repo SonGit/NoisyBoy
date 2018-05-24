@@ -12,11 +12,11 @@ public class Player : MonoBehaviour {
 	public int currentLife;
 	public static int Score = 0;
 	public static int highScore;
-
+	[HideInInspector]
+	public bool isPlayerUndying;
 	public TextMeshProUGUI scoreText;
 
     private int maxLife = 3;
-	private bool isPlayerUndying;
 	private float playerUndyingTimeCount;
 	private Renderer[] playerRenderers;
 
@@ -27,7 +27,7 @@ public class Player : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Score = 0;
+		highScore = Score;
 		currentLife = maxLife;
 		playerRenderers = rendererPlace.GetComponentsInChildren<Renderer> ();
 	}
@@ -63,18 +63,25 @@ public class Player : MonoBehaviour {
 	{
 		if (!isPlayerUndying) 
 		{
-			currentLife -= 1;
+			currentLife -= 3;
 
 			if (currentLife > 0)
 			{
+				if (AudioManager_RB.instance != null) {
+					AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.hitSound,transform.position);
+					StartCoroutine (MusicThemeManager.instance.PauseMusicTrumpet());
+				}
+					
 				PlayerUndying ();
 			}
 			else
 			{
+				DataController.instance.SubmitNewPlayerScore (Player.Score);
 				GameManager.instance.objHighScore.SetActive (true);
 				StartCoroutine( ScreenShot.Instance.TakeScreenShot ());
 				GameManager.instance.ShowGameOver ();
 				StartCoroutine( WaitDestroyPlayer ());
+				AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.PlayerDeath,transform.position);
 
 			}
 		}
@@ -117,6 +124,10 @@ public class Player : MonoBehaviour {
     ThrowObject throwObj;
     void OnTriggerStay(Collider other)
     {
+		if (currentLife <= 0) {
+			return;
+		}
+
         throwObj = other.GetComponent<ThrowObject>();
         if(throwObj != null)
         {

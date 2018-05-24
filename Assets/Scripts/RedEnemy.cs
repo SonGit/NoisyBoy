@@ -46,6 +46,9 @@ public class RedEnemy : Enemy
 			
 		throwObj.transform.position = shootPoint.position;
         //sandalA.Launch(transform.position + transform.forward * .4f);
+		if (Player.instance.currentLife > 0) {
+			AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.Whoosh,transform.position);
+		}
 
         float distanceToPlayer = Vector3.Distance(transform.position,Player.instance.transform.position);
 

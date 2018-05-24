@@ -22,6 +22,7 @@ public class GamePlayState : State {
 		PlayerController.instance.enabled = true;
 		PlayerController.instance.joystick.gameObject.SetActive(true);
 		GameManager.instance.objScore.SetActive (true);
+		MusicThemeManager.instance.PlayMusicTrumpet ();
 	}
 
 	public override void Exit ()

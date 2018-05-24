@@ -19,9 +19,9 @@ public class GameOverState : State {
 	public bool isSetting;
 	[HideInInspector]
 	public bool isAds;
-	[HideInInspector]
+
 	public float countDownTime = 10;
-	[HideInInspector]
+
 	public bool isCountdown;
 
 	// Use this for initialization
@@ -58,6 +58,8 @@ public class GameOverState : State {
 	private void ShowGameOver ()
 	{
 		gameObject.SetActive (true);
+		MusicThemeManager.instance.StopMusicTrumpet ();
+		MusicThemeManager.instance.StopMusicCar ();
 		isSetting = false;
 		//CancelInvoke ();
 	}
@@ -72,7 +74,7 @@ public class GameOverState : State {
 		countDownTime -= Time.deltaTime;
 
 		if (countDownTime <= 0) {
-			StopCountDown ();
+			isCountdown = false;
 			PlayMusicGameOver ();
 			ObjAdsUnActive ();
 		}
@@ -88,20 +90,22 @@ public class GameOverState : State {
 
 	private void PlayCountDown ()
 	{
-		//MusicThemeManager.instance.PlayMusicCountDown ();
+		MusicThemeManager.instance.PlayMusicCountDown ();
 	}
 
-	private void StopCountDown ()
+	public void StopCountDown ()
 	{
 		isCountdown = false;
-		//MusicThemeManager.instance.StopMusicCountDown ();
+		MusicThemeManager.instance.StopMusicCountDown ();
+		countDownTime = -1f;
 	}
 
 	private void PlayMusicGameOver ()
 	{
-//		if (Player.instance.currentLife <= 0) {
-//			MusicThemeManager.instance.PlayMusicGameOver ();
-//		}
+		
+		if (Player.instance.currentLife <= 0) {
+			MusicThemeManager.instance.PlayMusicGameOver ();
+		}
 
 	}
 
