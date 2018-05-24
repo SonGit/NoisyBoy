@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4421575021089578}
   - component: {fileID: 95564303185881220}
-  - component: {fileID: 114176206719478544}
+  - component: {fileID: 114256437419611232}
   m_Layer: 0
   m_Name: DoorA
   m_TagString: Untagged
@@ -60,6 +60,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1352719700136060
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4935696096751152}
+  - component: {fileID: 33077677939300980}
+  - component: {fileID: 23330490586313260}
+  - component: {fileID: 65352552164530052}
+  m_Layer: 9
+  m_Name: Cube
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1782315645155664
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,7 +103,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1782315645155664}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.055101335, y: -0.184, z: -0.048000038}
+  m_LocalPosition: {x: 0.0523, y: -0.184, z: -0.048000038}
   m_LocalScale: {x: 0.010000009, y: 0.01, z: 0.010000009}
   m_Children: []
   m_Father: {fileID: 4421575021089578}
@@ -102,6 +120,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4706872702750322}
+  - {fileID: 4935696096751152}
   m_Father: {fileID: 4421575021089578}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -133,6 +152,19 @@ Transform:
   m_Father: {fileID: 4399602438676750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 3.19, z: 0}
+--- !u!4 &4935696096751152
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352719700136060}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05544, y: -0.00203, z: -0.00301}
+  m_LocalScale: {x: 0.11223922, y: 0.17200841, z: 0.031736314}
+  m_Children: []
+  m_Father: {fileID: 4399602438676750}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23032579915307466
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -203,6 +235,48 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!23 &23330490586313260
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352719700136060}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 52e5f875dc6fa02479845443a728a153, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33077677939300980
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352719700136060}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33417961834036862
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -229,6 +303,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65352552164530052
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1352719700136060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!95 &95564303185881220
 Animator:
   serializedVersion: 3
@@ -247,7 +333,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114176206719478544
+--- !u!114 &114256437419611232
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -260,6 +346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DoorMesh: {fileID: 4399602438676750}
   Speed: 10
-  isFree: 1
+  isFree: 0
   left: 0
   startPoint: {fileID: 4091086148554182}

@@ -85,14 +85,17 @@ public class ThrowObject : Cacheable {
             }
             else
             {
-				if (Player.instance.currentLife > 0) {
-					AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.bup,transform.position);
-				}
+                if(collision.transform.name == "Floor")
+                {
+                    if (Player.instance.currentLife > 0)
+                    {
+                        AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.bup, transform.position);
+                    }
 
-                isKillPlayer = false;
-                trailRenderer.enabled = false;
-                //Invoke ("StartPoofEffect",5);
-                StartCoroutine(StartPoofEffect());
+                    isKillPlayer = false;
+                    trailRenderer.enabled = false;
+                    StartCoroutine(StartPoofEffect());
+                }
             }
 		}
     }
