@@ -14,6 +14,8 @@ public class Car : MonoBehaviour {
 
     public Car linkedCar;
 
+    public AudioSource carpassSound;
+
     Vector3 orgPos;
 
     // Use this for initialization
@@ -43,6 +45,8 @@ public class Car : MonoBehaviour {
         transform.position += transform.forward * Time.deltaTime * Speed;
     }
 
+    bool playSoundPass;
+
     void CheckBoundaries()
     {
         if (transform.position.x > -3 && transform.position.x < 3)
@@ -53,9 +57,18 @@ public class Car : MonoBehaviour {
             transform.position = orgPos;
             isReady = false;
             linkedCar.isReady = true;
-           // StartCoroutine(Countdown());
+            playSoundPass = false;
+            carpassSound.Play();
+        }
+
+        if(!playSoundPass)
+        if(transform.position.x > -0.3f && transform.position.x < 0.3f)
+        {
+                //carpassSound.Play();
+                playSoundPass = true;
         }
     }
+
 
     IEnumerator Countdown()
     {
