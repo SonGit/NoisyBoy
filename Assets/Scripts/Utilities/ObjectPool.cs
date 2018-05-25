@@ -24,7 +24,9 @@ public class ObjectPool : MonoBehaviour {
 
     GenericObject<PickupParticle> pickupEffect;
 
-    GenericObject<CFXM_Hit_Green> CFXM_Hit_Green;
+	GenericObject<HitEffect> hitEffect;
+
+	GenericObject<AudioSource_RB> audioSource;
 
     void Awake()
 	{
@@ -33,15 +35,16 @@ public class ObjectPool : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.Enemy,2);
-		poofEffect = new GenericObject<PoofEffect>(ObjectFactory.PrefabType.PoofEffect,4);
-		CFXM_Hit_Green = new GenericObject<CFXM_Hit_Green>(ObjectFactory.PrefabType.CFXM_Hit_Green,2);
-		sandalA = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalA,1);
-		sandalB = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalB,1);
-		bread = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Bread,1);
-		hammer = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Hammer,1);
-		pot = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Pot,1);
+		redEnemies = new GenericObject<RedEnemy>(ObjectFactory.PrefabType.redEnemy,2);
+		poofEffect = new GenericObject<PoofEffect>(ObjectFactory.PrefabType.PoofEffect,2);
+		hitEffect = new GenericObject<HitEffect>(ObjectFactory.PrefabType.HitEffect,2);
+		sandalA = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalA,2);
+		sandalB = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.SandalB,2);
+		bread = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Bread,2);
+		hammer = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Hammer,2);
+		pot = new GenericObject<ThrowObject>(ObjectFactory.PrefabType.Pot,2);
         pickupEffect = new GenericObject<PickupParticle>(ObjectFactory.PrefabType.PickupParticle, 3);
+		audioSource = new GenericObject<AudioSource_RB>(ObjectFactory.PrefabType.AudioSource,6);
     }
 		
 
@@ -55,9 +58,9 @@ public class ObjectPool : MonoBehaviour {
 		return poofEffect.GetObj();
 	}
 
-	public CFXM_Hit_Green GetCFXM_Hit_Green()
+	public HitEffect GetHitEffect()
 	{
-		return CFXM_Hit_Green.GetObj();
+		return hitEffect.GetObj();
 	}
 
 	public ThrowObject GetSandalA()
@@ -89,4 +92,9 @@ public class ObjectPool : MonoBehaviour {
     {
         return pickupEffect.GetObj();
     }
+
+	public AudioSource_RB GetAudioSource()
+	{
+		return audioSource.GetObj ();
+	}
 }

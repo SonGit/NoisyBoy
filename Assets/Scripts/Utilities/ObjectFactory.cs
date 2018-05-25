@@ -18,9 +18,8 @@ public class ObjectFactory: MonoBehaviour {
 	public enum PrefabType
 	{
 		None,
-		Enemy,
+		redEnemy,
 		AudioSource,
-		Explosion1,
 		PoofEffect,
 		SandalA,
 		SandalB,
@@ -28,16 +27,17 @@ public class ObjectFactory: MonoBehaviour {
 		Hammer,
 		Pot,
         PickupParticle,
-        CFXM_Hit_Green
+		HitEffect,
+
 	}
 
 	public Dictionary<PrefabType,string> PrefabPaths = new Dictionary<PrefabType, string> {
 		
 		{ PrefabType.None, "" },
-		{ PrefabType.Enemy, "Prefabs/Enemy" },
+		{ PrefabType.redEnemy, "Prefabs/Enemy" },
 		{ PrefabType.AudioSource, "Prefabs/AudioSource" },
 		{ PrefabType.PoofEffect, "Prefabs/PoofEffect" },
-		{ PrefabType.CFXM_Hit_Green, "Prefabs/CFXM_Hit_Green" },
+		{ PrefabType.HitEffect, "Prefabs/HitEffect" },
 		{ PrefabType.SandalA, "Prefabs/SandalA" },
 		{ PrefabType.SandalB, "Prefabs/SandalB" },
 		{ PrefabType.Bread, "Prefabs/Bread" },

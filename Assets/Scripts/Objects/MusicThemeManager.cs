@@ -26,7 +26,6 @@ public class MusicThemeManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		PlayMusicMenu ();
-		PlayMusicCar ();
 	}
 	
 	// Update is called once per frame
@@ -36,7 +35,7 @@ public class MusicThemeManager : MonoBehaviour {
 			if (isOnMusic == "f") {
 				stems [i].source.volume = 0;
 			} else if (isOnMusic == "t"){
-				stems [i].source.volume = 0.5f;
+				stems [i].source.volume = 0.8f;
 			}
 		}
 	}
@@ -53,36 +52,10 @@ public class MusicThemeManager : MonoBehaviour {
 		stems [0].source.Stop ();
 	}
 
-	public void PlayMusicCar ()
+	public void PlayMusicGameOver ()
 	{
-		stems[3].source.clip = stems[3].clip;
-		stems [3].source.Play ();
-	}
-
-	public void StopMusicCar ()
-	{
-		stems[3].source.clip = stems[3].clip;
-		stems [3].source.Stop ();
-	}
-
-	public void PlayMusicTapAm ()
-	{
-		Debug.Log ("1");
-		stems[5].source.clip = stems[5].clip;
-		stems [5].source.Play ();
-	}
-		
-
-	public void PlayMusicTrumpet ()
-	{
-		stems[4].source.clip = stems[4].clip;
-		stems [4].source.Play ();
-	}
-
-	public void StopMusicTrumpet ()
-	{
-		stems[4].source.clip = stems[4].clip;
-		stems [4].source.Stop ();
+		stems [1].source.clip = stems [1].clip;
+		stems [1].source.Play ();
 	}
 
 	public void PlayMusicCountDown ()
@@ -93,21 +66,34 @@ public class MusicThemeManager : MonoBehaviour {
 
 	public void StopMusicCountDown ()
 	{
-		
+
 		stems[2].source.clip = stems[2].clip;
 		stems [2].source.Stop ();
 	}
 
-	public void PlayMusicGameOver ()
+	public void PlayMusicTrumpet ()
 	{
-		stems [1].source.clip = stems [1].clip;
-		stems [1].source.Play ();
+		stems[3].source.clip = stems[3].clip;
+		stems [3].source.Play ();
 	}
+
+	public void StopMusicTrumpet ()
+	{
+		stems[3].source.clip = stems[3].clip;
+		stems [3].source.Stop ();
+	}
+
+	public void PlayMusicTapAm ()
+	{
+		stems[4].source.clip = stems[4].clip;
+		stems [4].source.Play ();
+	}
+		
 
 	public IEnumerator PauseMusicTrumpet ()
 	{
 		StopMusicTrumpet ();
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (0.7f);
 		PlayMusicTrumpet ();
 	}
 		

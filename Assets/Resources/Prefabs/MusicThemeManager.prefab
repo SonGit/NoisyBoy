@@ -148,10 +148,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stems:
+  - source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 736a768985e6a534097fa1c621cebe0b, type: 3}
   - source: {fileID: 82250331434343338}
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 15e26518785848f4caf8ba236b4d0690, type: 3}
   - source: {fileID: 82250331434343338}
-    clip: {fileID: 0}
-  - source: {fileID: 82250331434343338}
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 68018718ddf4507478fa886c99b7f36c, type: 3}
+  - source: {fileID: 0}
+    clip: {fileID: 8300000, guid: 56de016fca7396d4b87e6fff8b8d5178, type: 3}
+  - source: {fileID: 0}
+    clip: {fileID: 8300000, guid: e1c557be5ef4efc4388c1c09d9b6b42b, type: 3}
   isOnMusic: t

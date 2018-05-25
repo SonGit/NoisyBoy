@@ -36,7 +36,7 @@ public class Player : MonoBehaviour {
 	void Update () {
        
         if(scoreText != null)
-        scoreText.text = "Score: " + Score;
+        scoreText.text = "" + Score;
 
         if (!isPlayerUndying) {
 			return;
@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
 		}
 	
 		Killed ();
-		throwObj.CFXM_Hit_GreenEffect (throwObj.transform);
+		throwObj.CFXM_Hit_Effect (throwObj.transform);
 	}
 
 

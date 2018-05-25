@@ -59,7 +59,6 @@ public class GameOverState : State {
 	{
 		gameObject.SetActive (true);
 		MusicThemeManager.instance.StopMusicTrumpet ();
-		MusicThemeManager.instance.StopMusicCar ();
 		MusicThemeManager.instance.StopMusicMenu ();
 		isSetting = false;
 		//CancelInvoke ();

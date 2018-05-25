@@ -8,18 +8,18 @@ public class AudioSource_RB : Cacheable {
 
 	public override void OnLive ()
 	{
+		gameObject.SetActive(true);
 		audioSource.Play();
 	}
 
 	public override void OnDestroy ()
 	{
-
+		gameObject.SetActive(false);
 	}
 
 
 	// Use this for initialization
 	void Start () {
-		Destroy ();
 	}
 
 	private float timeCount = 0;

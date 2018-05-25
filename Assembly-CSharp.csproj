@@ -116,9 +116,9 @@
      <Compile Include="Assets\Scripts\EnemyManager.cs" />
      <Compile Include="Assets\Scripts\Objects\AudioManager_RB.cs" />
      <Compile Include="Assets\Scripts\Objects\AudioSource_RB.cs" />
-     <Compile Include="Assets\Scripts\Objects\CFXM_Hit_Green.cs" />
      <Compile Include="Assets\Scripts\Objects\Cloud.cs" />
      <Compile Include="Assets\Scripts\Objects\DataController.cs" />
+     <Compile Include="Assets\Scripts\Objects\HitEffect.cs" />
      <Compile Include="Assets\Scripts\Objects\MusicThemeManager.cs" />
      <Compile Include="Assets\Scripts\Objects\PickupParticle.cs" />
      <Compile Include="Assets\Scripts\Objects\ThrowObject.cs" />
@@ -148,7 +148,6 @@
      <Compile Include="Assets\Scripts\Utilities\GenericObject.cs" />
      <Compile Include="Assets\Scripts\Utilities\ObjectFactory.cs" />
      <Compile Include="Assets\Scripts\Utilities\ObjectPool.cs" />
-     <Compile Include="Assets\Scripts\Utilities\ObjectPoolSound.cs" />
      <Compile Include="Assets\Scripts\Utilities\Utility.cs" />
      <Compile Include="Assets\Scripts\Window.cs" />
      <Compile Include="Assets\ShareImage\NativeShare\NativeShare.cs" />
@@ -202,6 +201,7 @@
      <None Include="Assets\Resources\JMO Assets\Cartoon FX\Shaders\CFX2 Particle Alpha Blend Add.shader" />
      <None Include="Assets\_MK\MKGlowFree\Shader\Variants_SelectiveMode\Illumin\MK_Illumin-DiffuseBumped.shader" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\DiskKernels.hlsl" />
+     <None Include="Assets\Resources\InvisibleMask.shader" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\MultiScaleVODownsample2.compute" />
      <None Include="Assets\_MK\MKGlowFree\Shader\Variants_SelectiveMode\Normal\MK_Normal-Glossy.shader" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\ScalableAO.hlsl" />
@@ -215,6 +215,7 @@
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\Fog.hlsl" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\MultiScaleVORender.compute" />
      <None Include="Assets\ShareImage\NativeShare\README.txt" />
+     <None Include="Assets\Font\Font License.txt" />
      <None Include="Assets\Resources\JMO Assets\!JMO Assets Readme.txt" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\ScalableAO.shader" />
      <None Include="Assets\PostProcessing-2\PostProcessing\Shaders\Builtins\SubpixelMorphologicalAntialiasing.hlsl" />

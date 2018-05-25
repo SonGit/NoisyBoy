@@ -50,11 +50,11 @@ public class AudioManager_RB : MonoBehaviour {
 		AudioClip clip;
 		if (clips.TryGetValue (soundFX, out clip)) {
 			
-			AudioSource_RB audio = ObjectPoolSound.instance.GetAudioSource ();
+			AudioSource_RB audio = ObjectPool.instance.GetAudioSource ();
 			audio.audioSource.clip = clip;
 
 			if (isOnSound == "t") {
-				audio.audioSource.volume = 0.6f;
+				audio.audioSource.volume = 1f;
 			} else if (isOnSound == "f"){
 				audio.audioSource.volume = 0;
 			}

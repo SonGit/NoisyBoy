@@ -182,11 +182,11 @@ public class ThrowObject : Cacheable {
 		PoofEffect (transform);
 	}
 
-	public void CFXM_Hit_GreenEffect(Transform pos)
+	public void CFXM_Hit_Effect(Transform pos)
 	{
-		CFXM_Hit_Green CFXM_Hit_Green = ObjectPool.instance.GetCFXM_Hit_Green ();
-		CFXM_Hit_Green.transform.position = pos.position;
-		CFXM_Hit_Green.Destroy ();
+		HitEffect hitEffect = ObjectPool.instance.GetHitEffect ();
+		hitEffect.transform.position = pos.position;
+		hitEffect.Destroy ();
 		StartCoroutine (WaitDestroy());
 	}
 

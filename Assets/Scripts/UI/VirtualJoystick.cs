@@ -49,8 +49,8 @@ public class VirtualJoystick : MonoBehaviour, IPointerDownHandler, IDragHandler,
 			_inputVector = new Vector3(pos.x * 2 + 1, 0, pos.y * 2 -1);
 			_inputVector = (_inputVector.magnitude > 1.0f) ? _inputVector.normalized : _inputVector;
 
-			ImgJoystick.rectTransform.anchoredPosition = new Vector3(_inputVector.x * (ImgBg.rectTransform.sizeDelta.x * .4f),
-				_inputVector.z * (ImgBg.rectTransform.sizeDelta.y * .4f));
+			ImgJoystick.rectTransform.anchoredPosition = new Vector3(_inputVector.x * (ImgBg.rectTransform.sizeDelta.x * .31f),
+				_inputVector.z * (ImgBg.rectTransform.sizeDelta.y * 0f));
 		}
 	}   
 

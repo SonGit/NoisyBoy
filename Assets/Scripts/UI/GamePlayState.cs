@@ -37,6 +37,7 @@ public class GamePlayState : State {
 
 	public void PauseBtn ()
 	{
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		PlayerController.instance.isPauseGame = true;
 		Time.timeScale = 0;
 		containerBtns [0].SetActive (false);
@@ -45,6 +46,7 @@ public class GamePlayState : State {
 
 	public void ResumeBtn ()
 	{
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		PlayerController.instance.isPauseGame = false;
 		Time.timeScale = 1;
 		containerBtns [0].SetActive (true);
