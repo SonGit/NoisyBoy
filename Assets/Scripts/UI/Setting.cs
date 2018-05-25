@@ -91,7 +91,6 @@ public class Setting : State {
 
 	public override void Enter ()
 	{
-		GameOverState.instance.isSetting = true;
 
 		if (GameManager.instance != null) {
 			GameManager.instance.objScore.SetActive (false);

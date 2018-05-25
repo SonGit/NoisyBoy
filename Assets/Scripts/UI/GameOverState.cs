@@ -16,8 +16,7 @@ public class GameOverState : State {
 	public GameObject objGameOverText;
 	public GameObject objAds;
 	[HideInInspector]
-	public bool isSetting;
-	[HideInInspector]
+
 	public bool isAds;
 
 	public float countDownTime = 10;
@@ -26,7 +25,7 @@ public class GameOverState : State {
 
 	// Use this for initialization
 	void Start () {
-		isSetting = false;
+		
 	}
 	
 	// Update is called once per frame
@@ -36,11 +35,7 @@ public class GameOverState : State {
 
 	public override void Enter ()
 	{
-		if (!isSetting) {
-			Invoke ("ShowGameOver", 0.7f);
-		} else {
-			ShowGameOver ();
-		}
+		Invoke ("ShowGameOver", 0.7f);
 			
 		if (!isAds) {
 			PlayCountDown ();
@@ -60,8 +55,6 @@ public class GameOverState : State {
 		gameObject.SetActive (true);
 		MusicThemeManager.instance.StopMusicTrumpet ();
 		MusicThemeManager.instance.StopMusicMenu ();
-		isSetting = false;
-		//CancelInvoke ();
 	}
 
 	public void CountDown ()

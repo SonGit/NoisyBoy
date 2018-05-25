@@ -51,15 +51,15 @@ public class PlayerController : MonoBehaviour {
             if (axis < 0)
             {
 				orientation = 1;
-				nextPos =  t.position + (t.forward * Time.deltaTime * Speed * 1 / Time.timeScale);
+				nextPos =  t.position + (t.forward * Time.deltaTime * Speed );
 				if(nextPos.x  < 1.1f)
 				t.position = nextPos;
             }
             else
             {
                 orientation = -1;
-				nextPos = t.position - (t.forward * Time.deltaTime * Speed * 1 / Time.timeScale);
-				if(nextPos.x  > -1)
+				nextPos = t.position - (t.forward * Time.deltaTime * Speed );
+				if(nextPos.x  > -.8f)
 					t.position = nextPos;
             }
         }
