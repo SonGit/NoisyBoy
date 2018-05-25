@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public static Player instance;
 
 	public GameObject rendererPlace;
+	public GameObject particleSystemPlace;
 	public int currentLife;
 	public static int Score = 0;
 	public static int highScore;
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour {
     private int maxLife = 3;
 	private float playerUndyingTimeCount;
 	private Renderer[] playerRenderers;
+	private ParticleSystem[] Playerparticle;
 
 	void Awake ()
 	{
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour {
 		highScore = Score;
 		currentLife = maxLife;
 		playerRenderers = rendererPlace.GetComponentsInChildren<Renderer> ();
+		Playerparticle = particleSystemPlace.GetComponentsInChildren<ParticleSystem> ();
 	}
 	
 	// Update is called once per frame
@@ -147,6 +150,12 @@ public class Player : MonoBehaviour {
 		{
 			yield return new WaitForSeconds (0.05f);
 			renderer.gameObject.SetActive (false);
+		}
+
+		foreach (ParticleSystem particle in Playerparticle) 
+		{
+			yield return new WaitForSeconds (0.05f);
+			particle.Stop ();
 		}
 	}
 }
