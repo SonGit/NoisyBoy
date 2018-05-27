@@ -42,36 +42,62 @@ public class PlayerController : MonoBehaviour {
 
     float axis;
     float orientation;
+    float lastAxis = 0;
 	Vector3 nextPos;
     void AxisMovement()
     {
 		axis = joystick.Horizontal ();
-        if(axis != 0)
+
+        if(axis < -0.8f )
         {
-            if (axis < 0)
-            {
-				orientation = 1;
-				nextPos =  t.position + (t.forward * Time.deltaTime * Speed );
-				if(nextPos.x  < 1.1f)
-				t.position = nextPos;
-            }
-            else
-            {
-                orientation = -1;
-				nextPos = t.position - (t.forward * Time.deltaTime * Speed );
-				if(nextPos.x  > -.8f)
-					t.position = nextPos;
-            }
+            axis = -0.8f;
         }
 
-        if (orientation > 0)
+        if ( axis > 0.8f)
+        {
+            axis = 0.8f;
+        }
+
+        // print("axis " + axis + " lastAxis " + lastAxis);
+
+        if (axis == 0 )
+        {
+            lastAxis = axis;
+            orientation = 0;
+            //print("PAL: " + axis);
+            return;
+        }
+
+        if (axis < lastAxis)
+        {
+            print("(1)");
+            orientation = 1;
+        }
+
+        if (axis > lastAxis)
+        {
+            print("(2)");
+            orientation = -1;
+        }
+
+        lastAxis = axis;
+
+        if (orientation == 1)
         {
             Mesh.localRotation = Quaternion.Lerp(Mesh.localRotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * TurnSpeed * 1 / Time.timeScale);
+            nextPos = t.position + (t.forward * Time.deltaTime * Speed);
+            if (nextPos.x < 1.1f)
+                t.position = nextPos;
         }
-        else
+
+        if (orientation == -1)
         {
             Mesh.localRotation = Quaternion.Lerp(Mesh.localRotation, Quaternion.Euler(0, 180, 0), Time.deltaTime * TurnSpeed * 1 / Time.timeScale);
+            nextPos = t.position - (t.forward * Time.deltaTime * Speed);
+            if (nextPos.x > -.8f)
+                t.position = nextPos;
         }
+
 
     }
 }
