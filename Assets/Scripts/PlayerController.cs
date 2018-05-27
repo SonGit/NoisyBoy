@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour {
     float orientation;
     float lastAxis = 0;
 	Vector3 nextPos;
+    float orr = 0.025f;
+
     void AxisMovement()
     {
 		axis = joystick.Horizontal ();
@@ -66,14 +68,17 @@ public class PlayerController : MonoBehaviour {
             return;
         }
 
+
         if (axis < lastAxis)
         {
+            if(Mathf.Abs(axis - lastAxis) > orr)
             orientation = 1;
         }
 
         if (axis > lastAxis)
         {
-            orientation = -1;
+            if (Mathf.Abs(axis - lastAxis) > orr)
+                orientation = -1;
         }
 
         lastAxis = axis;
