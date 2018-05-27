@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour {
     {
 		axis = joystick.Horizontal ();
 
+        //??? fix
         if(axis < -0.8f )
         {
             axis = -0.8f;
@@ -58,25 +59,20 @@ public class PlayerController : MonoBehaviour {
             axis = 0.8f;
         }
 
-        // print("axis " + axis + " lastAxis " + lastAxis);
-
         if (axis == 0 )
         {
             lastAxis = axis;
             orientation = 0;
-            //print("PAL: " + axis);
             return;
         }
 
         if (axis < lastAxis)
         {
-            print("(1)");
             orientation = 1;
         }
 
         if (axis > lastAxis)
         {
-            print("(2)");
             orientation = -1;
         }
 
