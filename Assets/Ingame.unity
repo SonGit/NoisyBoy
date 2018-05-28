@@ -6958,36 +6958,36 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114486242877394578, guid: 96c91153ba52f544fb230298e14e9c31,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114486242877394578, guid: 96c91153ba52f544fb230298e14e9c31,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114869117117115556, guid: 96c91153ba52f544fb230298e14e9c31,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114869117117115556, guid: 96c91153ba52f544fb230298e14e9c31,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114452691861953484, guid: 96c91153ba52f544fb230298e14e9c31,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1178083229}
     - target: {fileID: 114020097169824286, guid: 96c91153ba52f544fb230298e14e9c31,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1178083229}
+    - target: {fileID: 114452691861953484, guid: 96c91153ba52f544fb230298e14e9c31,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1178083229}
+    - target: {fileID: 114869117117115556, guid: 96c91153ba52f544fb230298e14e9c31,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114869117117115556, guid: 96c91153ba52f544fb230298e14e9c31,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486242877394578, guid: 96c91153ba52f544fb230298e14e9c31,
+        type: 2}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114486242877394578, guid: 96c91153ba52f544fb230298e14e9c31,
+        type: 2}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96c91153ba52f544fb230298e14e9c31, type: 2}
   m_IsPrefabParent: 0

@@ -21,6 +21,7 @@ public class Setting : State {
 	{
 		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitMusicSetting ("f");
+		MusicThemeManager.instance.UpdateMusicTheme ();
 
 	}
 
@@ -28,6 +29,7 @@ public class Setting : State {
 	{
 		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitMusicSetting ("t");
+		MusicThemeManager.instance.UpdateMusicTheme ();
 	}
 
 	public void SoundOn()

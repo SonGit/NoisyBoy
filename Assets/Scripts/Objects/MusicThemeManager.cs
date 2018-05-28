@@ -31,6 +31,10 @@ public class MusicThemeManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+	}
+		
+	public void UpdateMusicTheme ()
+	{
 		for (int i = 0; i < stems.Length; i++) {
 			if (isOnMusic == "f") {
 				stems [i].source.volume = 0;
