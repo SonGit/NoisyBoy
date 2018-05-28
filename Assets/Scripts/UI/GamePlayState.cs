@@ -23,8 +23,8 @@ public class GamePlayState : State {
 		EnemyManager.instance.enabled = true;
 		PlayerController.instance.enabled = true;
 		GameManager.instance.objScore.SetActive (true);
-		MusicThemeManager.instance.PlayMusicTrumpet ();
-		MusicThemeManager.instance.PlayMusicTapAm ();
+		MusicThemeManager.instance.OnMusic (3);
+		MusicThemeManager.instance.OnMusic (4);
 	}
 
 	public override void Exit ()

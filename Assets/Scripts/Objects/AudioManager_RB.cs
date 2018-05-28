@@ -29,6 +29,8 @@ public class AudioManager_RB : MonoBehaviour {
 			{ SoundFX.ButtonPresses, Resources.Load<AudioClip>("Sounds/ButtonPresses") },
 			{ SoundFX.Whoosh, Resources.Load<AudioClip>("Sounds/Whoosh") },
 			{ SoundFX.bup, Resources.Load<AudioClip>("Sounds/bup") },
+			{ SoundFX.Sandal, Resources.Load<AudioClip>("Sounds/Sandal") },
+			{ SoundFX.Pot, Resources.Load<AudioClip>("Sounds/Pot") },
 		};
 
 		yield return new WaitForSeconds (1);
@@ -42,7 +44,9 @@ public class AudioManager_RB : MonoBehaviour {
 		ButtonPresses,
 		pickup,
 		Whoosh,
-		bup
+		bup,
+		Sandal,
+		Pot
 	}
 
 	public void PlayClip(SoundFX soundFX,Vector3 worldPos)

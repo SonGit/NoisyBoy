@@ -40,8 +40,6 @@ public class GameOverState : State {
 		if (!isAds) {
 			PlayCountDown ();
 		}
-
-		isCountdown = true;
 	}
 
 	public override void Exit ()
@@ -53,8 +51,11 @@ public class GameOverState : State {
 	private void ShowGameOver ()
 	{
 		gameObject.SetActive (true);
-		MusicThemeManager.instance.StopMusicTrumpet ();
-		MusicThemeManager.instance.StopMusicMenu ();
+		isCountdown = true;
+		MusicThemeManager.instance.StopMusic (0);
+		MusicThemeManager.instance.StopMusic (3);
+		MusicThemeManager.instance.StopMusic (4);
+		MusicThemeManager.instance.StopMusic (5);
 	}
 
 	public void CountDown ()
@@ -67,7 +68,7 @@ public class GameOverState : State {
 		countDownTime -= Time.deltaTime;
 
 		if (countDownTime <= 0) {
-			isCountdown = false;
+			StopCountDown ();
 			PlayMusicGameOver ();
 			ObjAdsUnActive ();
 		}
@@ -83,23 +84,27 @@ public class GameOverState : State {
 
 	private void PlayCountDown ()
 	{
-		MusicThemeManager.instance.PlayMusicCountDown ();
+		MusicThemeManager.instance.OnMusic (2);
 	}
 
 	public void StopCountDown ()
 	{
 		isCountdown = false;
-		MusicThemeManager.instance.StopMusicCountDown ();
+		MusicThemeManager.instance.StopMusic (2);
 		countDownTime = -1f;
 	}
 
 	private void PlayMusicGameOver ()
 	{
-		
 		if (Player.instance.currentLife <= 0) {
-			MusicThemeManager.instance.PlayMusicGameOver ();
+			MusicThemeManager.instance.OnMusic (1);
 		}
 
+	}
+
+	public void StopMusicGameOver ()
+	{
+		MusicThemeManager.instance.StopMusic (1);
 	}
 
 }

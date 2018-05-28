@@ -126,7 +126,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e67724e8f59bec4eba0ca8a7461c9de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f22c9a2e8f72e44684060fa725b7a33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -153,7 +153,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e67724e8f59bec4eba0ca8a7461c9de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f22c9a2e8f72e44684060fa725b7a33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -180,7 +180,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 3e67724e8f59bec4eba0ca8a7461c9de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7f22c9a2e8f72e44684060fa725b7a33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -200,8 +200,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeRectTransform: {fileID: 224408529832817486}
-  heart: {fileID: 21300000, guid: 3e67724e8f59bec4eba0ca8a7461c9de, type: 3}
-  heartEmpty: {fileID: 21300000, guid: cf5dbe37d3a68764b8c1067de9617882, type: 3}
+  heart: {fileID: 21300000, guid: 7f22c9a2e8f72e44684060fa725b7a33, type: 3}
+  heartEmpty: {fileID: 21300000, guid: 16edc363de81e6742a15892db9e5ad24, type: 3}
 --- !u!222 &222266519690708468
 CanvasRenderer:
   m_ObjectHideFlags: 1
@@ -244,7 +244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 104.9, y: -61.7}
+  m_AnchoredPosition: {x: 107.7, y: -68.7}
   m_SizeDelta: {x: 201, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224453079419258868

@@ -74,7 +74,9 @@ public class AdsManager : MonoBehaviour {
 		Player.instance.PlayerUndying ();
 		VirtualJoystick.instance.ImgAnchor.transform.position = new Vector3(-20000,-20000,-20000);
 		GameOverState.instance.StopCountDown ();
-		MusicThemeManager.instance.PlayMusicMenu ();
+		GameOverState.instance.StopMusicGameOver ();
+		MusicThemeManager.instance.OnMusic (0);
+		MusicThemeManager.instance.OnMusic (5);
 	}
 		
 }

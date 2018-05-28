@@ -24,81 +24,113 @@ public class MusicThemeManager : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
-		PlayMusicMenu ();
+	IEnumerator Start () {
+		yield return new WaitForSeconds (0.25f);
+		PlayMusicTheme ();
+		StartMusicTheme ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		UpdateMusicTheme ();
 	}
 		
 	public void UpdateMusicTheme ()
 	{
 		for (int i = 0; i < stems.Length; i++) {
 			if (isOnMusic == "f") {
-				stems [i].source.volume = 0;
-			} else if (isOnMusic == "t"){
-				stems [i].source.volume = 0.8f;
+				switch (stems[i].clip.name) 
+				{
+				case "ambient":
+					stems [i].source.volume = 0f;
+					break;
+				case "GameOver":
+					stems [i].source.volume = 0f;
+					break;
+				case "4321":
+					stems [i].source.volume = 0f;
+					break;
+				default:
+					break;
+				}
+			}
+			if (isOnMusic == "t")
+			{
+				switch (stems[i].clip.name) 
+				{
+				case "trumpet":
+					stems [i].source.volume = 0.8f;
+					break;
+				default:
+					stems [i].source.volume = 1f;
+					break;
+				}
+
+			}
+			if (AudioManager_RB.instance.isOnSound == "f") {
+				switch (stems[i].clip.name) 
+				{
+				case "TapAm":
+					stems [i].source.volume = 0f;
+					break;
+				case "carpass1":
+					stems [i].source.volume = 0f;
+					break;
+				default:
+					break;
+				}
+			}
+			if (AudioManager_RB.instance.isOnSound == "t")
+			{
+				switch (stems[i].clip.name) 
+				{
+				case "carpass1":
+					stems [i].source.volume = 0.25f;
+					break;
+				case "TapAm":
+					stems [i].source.volume = 0.4f;
+					break;
+				default:
+					break;
+				}
+
 			}
 		}
 	}
 
-	public void PlayMusicMenu ()
+	private void PlayMusicTheme ()
 	{
-		stems[0].source.clip = stems[0].clip;
-		stems [0].source.Play ();
+		for (int i = 0; i < stems.Length; i++) {
+			stems[i].source.clip = stems[i].clip;
+			stems [i].source.Play ();
+		}
 	}
 
-	public void StopMusicMenu ()
+	private void StartMusicTheme ()
 	{
-		stems[0].source.clip = stems[0].clip;
-		stems [0].source.Stop ();
-	}
-
-	public void PlayMusicGameOver ()
-	{
-		stems [1].source.clip = stems [1].clip;
-		stems [1].source.Play ();
-	}
-
-	public void PlayMusicCountDown ()
-	{
-		stems[2].source.clip = stems[2].clip;
-		stems [2].source.Play ();
-	}
-
-	public void StopMusicCountDown ()
-	{
-
-		stems[2].source.clip = stems[2].clip;
-		stems [2].source.Stop ();
-	}
-
-	public void PlayMusicTrumpet ()
-	{
-		stems[3].source.clip = stems[3].clip;
-		stems [3].source.Play ();
-	}
-
-	public void StopMusicTrumpet ()
-	{
-		stems[3].source.clip = stems[3].clip;
-		stems [3].source.Stop ();
-	}
-
-	public void PlayMusicTapAm ()
-	{
-		stems[4].source.clip = stems[4].clip;
-		stems [4].source.Play ();
+		OnMusic (0);
+		OnMusic (5);
+		StopMusic (1);
+		StopMusic (2);
+		StopMusic (3);
+		StopMusic (4);
 	}
 		
+	public void OnMusic (int i)
+	{
+		stems [i].source.mute = false;
+	}
 
+	public void StopMusic (int i)
+	{
+		stems [i].source.mute = true;
+	}
+		
 	public IEnumerator PauseMusicTrumpet ()
 	{
-		StopMusicTrumpet ();
+		StopMusic (3);
 		yield return new WaitForSeconds (0.7f);
-		PlayMusicTrumpet ();
+		OnMusic (3);
 	}
 		
 }

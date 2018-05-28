@@ -14,7 +14,7 @@ public class Car : MonoBehaviour {
 
     public Car linkedCar;
 
-    public AudioSource carpassSound;
+    //public AudioSource carpassSound;
 
     Vector3 orgPos;
 
@@ -58,7 +58,7 @@ public class Car : MonoBehaviour {
             isReady = false;
             linkedCar.isReady = true;
             playSoundPass = false;
-            carpassSound.Play();
+            //carpassSound.Play();
         }
 
         if(!playSoundPass)

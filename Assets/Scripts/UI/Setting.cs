@@ -21,15 +21,12 @@ public class Setting : State {
 	{
 		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitMusicSetting ("f");
-		MusicThemeManager.instance.UpdateMusicTheme ();
-
 	}
 
 	public void MusicOff()
 	{
 		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 		DataController.instance.SubmitMusicSetting ("t");
-		MusicThemeManager.instance.UpdateMusicTheme ();
 	}
 
 	public void SoundOn()
@@ -108,11 +105,11 @@ public class Setting : State {
 	public override void Exit ()
 	{
 		if (GameManager.instance != null) {
-			GameManager.instance.objScore.SetActive (true);
+			GameManager.instance.objScore.SetActive (false);
 		}
 
 		if (GameManager.instance != null) {
-			GameManager.instance.objHighScore.SetActive (true);
+			GameManager.instance.objHighScore.SetActive (false);
 		}
 
 		gameObject.SetActive (false);

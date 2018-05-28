@@ -89,7 +89,29 @@ public class ThrowObject : Cacheable {
                 {
                     if (Player.instance.currentLife > 0)
                     {
-                        AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.bup, transform.position);
+						switch (transform.name) 
+						{
+
+						case "SandalA(Clone)":
+							AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.Sandal, transform.position);
+							break;
+						case "SandalB(Clone)":
+							AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.Sandal, transform.position);
+							break;
+						case "Hammer(Clone)":
+							AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.bup, transform.position);
+							break;
+						case "Pot(Clone)":
+							AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.Pot, transform.position);
+							break;
+						case "Bread(Clone)":
+							AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.bup, transform.position);
+							break;
+						default:
+							AudioManager_RB.instance.PlayClip(AudioManager_RB.SoundFX.bup, transform.position);
+							break;
+						}
+							
                     }
 
                     isKillPlayer = false;

@@ -4,12 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WebsiteManager : MonoBehaviour {
-
-	private Button m_Button;
+	
 	// Use this for initialization
 	void Start () {
-		m_Button = GetComponent<Button>();
-		if (m_Button) m_Button.onClick.AddListener(LinkToWebsite);
+		
 	}
 	
 	// Update is called once per frame
@@ -17,9 +15,15 @@ public class WebsiteManager : MonoBehaviour {
 		
 	}
 
-	public void LinkToWebsite ()
+	public void LinkToCroroll ()
 	{
 		Application.OpenURL ("market://details?id=com.avr.planet");
-		//AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
+	}
+
+	public void LinkToNoisyBoy ()
+	{
+		Application.OpenURL ("market://details?id=com.avr.NoisyBoyFunSurvival");
+		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
 	}
 }
