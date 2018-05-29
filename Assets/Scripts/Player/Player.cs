@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
 	void Awake ()
 	{
 		instance = this;
+		Application.targetFrameRate = 60;
 	}
 
 	// Use this for initialization

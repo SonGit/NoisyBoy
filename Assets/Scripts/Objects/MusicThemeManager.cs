@@ -37,7 +37,8 @@ public class MusicThemeManager : MonoBehaviour {
 		
 	public void UpdateMusicTheme ()
 	{
-		for (int i = 0; i < stems.Length; i++) {
+		for (int i = 0; i < stems.Length; i++) 
+		{
 			if (isOnMusic == "f") {
 				switch (stems[i].clip.name) 
 				{
@@ -50,11 +51,14 @@ public class MusicThemeManager : MonoBehaviour {
 				case "4321":
 					stems [i].source.volume = 0f;
 					break;
+				case "trumpet":
+					stems [i].source.volume = 0f;
+					break;
 				default:
 					break;
 				}
 			}
-			if (isOnMusic == "t")
+			else
 			{
 				switch (stems[i].clip.name) 
 				{
@@ -67,7 +71,9 @@ public class MusicThemeManager : MonoBehaviour {
 				}
 
 			}
-			if (AudioManager_RB.instance.isOnSound == "f") {
+
+			if (AudioManager_RB.instance.isOnSound == "f") 
+			{
 				switch (stems[i].clip.name) 
 				{
 				case "TapAm":
@@ -80,15 +86,15 @@ public class MusicThemeManager : MonoBehaviour {
 					break;
 				}
 			}
-			if (AudioManager_RB.instance.isOnSound == "t")
+			else
 			{
 				switch (stems[i].clip.name) 
 				{
-				case "carpass1":
-					stems [i].source.volume = 0.25f;
-					break;
 				case "TapAm":
 					stems [i].source.volume = 0.4f;
+					break;
+				case "carpass1":
+					stems [i].source.volume = 0.25f;
 					break;
 				default:
 					break;
