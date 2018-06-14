@@ -1,17 +1,24 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Objects\MusicThemeManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player\Player.cs">
     <Files>
-      <File FileName="Assets\Scripts\Objects\ThrowObject.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\ThrowObject.cs" Line="78" Column="1" />
+      <File FileName="Assets\Scripts\RedEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\EnemyManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\DoubleDoor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RedEnemyTower.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Player\Player.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Objects\MusicThemeManager.cs" Line="83" Column="4" />
-      <File FileName="Assets\Scripts\Objects\AudioManager_RB.cs" Line="60" Column="17" />
+      <File FileName="Assets\Scripts\Objects\MusicThemeManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Objects\AudioManager_RB.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\GameManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\GameOverState.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\GamePlayState.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\UI\Setting.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\Objects\WebsiteManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Door.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Doorway.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
