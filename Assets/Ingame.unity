@@ -295,40 +295,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 114237907492367344, guid: a3569ea7c9a058544a2146f3f3cb79ad,
-        type: 2}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1178083229}
-    - target: {fileID: 114064499605688842, guid: a3569ea7c9a058544a2146f3f3cb79ad,
-        type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114064499605688842, guid: a3569ea7c9a058544a2146f3f3cb79ad,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 114901286503659218, guid: a3569ea7c9a058544a2146f3f3cb79ad,
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1660053327}
-    - target: {fileID: 114931095543626234, guid: a3569ea7c9a058544a2146f3f3cb79ad,
+    - target: {fileID: 114237907492367344, guid: a3569ea7c9a058544a2146f3f3cb79ad,
         type: 2}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114931095543626234, guid: a3569ea7c9a058544a2146f3f3cb79ad,
-        type: 2}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1790787599712446, guid: a3569ea7c9a058544a2146f3f3cb79ad, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1178083229}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a3569ea7c9a058544a2146f3f3cb79ad, type: 2}
   m_IsPrefabParent: 0
@@ -2269,7 +2245,7 @@ GameObject:
   - component: {fileID: 420966883}
   - component: {fileID: 420966882}
   - component: {fileID: 420966884}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: polySurface2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6647,6 +6623,10 @@ Prefab:
     - target: {fileID: 114486242877394578, guid: 96c91153ba52f544fb230298e14e9c31,
         type: 2}
       propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1049362457870116, guid: 96c91153ba52f544fb230298e14e9c31, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
