@@ -41,14 +41,9 @@ public class Setting : State {
 		DataController.instance.SubmitSoundSetting ("t");
 	}
 
-	public void Show()
+	public override string GetName ()
 	{
-		gameObject.SetActive (true);
-	}
-
-	public void Hide()
-	{
-		gameObject.SetActive (false);
+		return "Setting";
 	}
 
 	void UpdateUISetting()
@@ -88,7 +83,7 @@ public class Setting : State {
 		}
 	}
 
-	public override void Enter ()
+	public override void Enter (State from)
 	{
 
 		if (GameManager.instance != null) {
@@ -102,7 +97,7 @@ public class Setting : State {
 		gameObject.SetActive (true);
 	}
 
-	public override void Exit ()
+	public override void Exit (State to)
 	{
 		if (GameManager.instance != null) {
 			GameManager.instance.objScore.SetActive (false);

@@ -68,7 +68,6 @@ public class AdsManager : MonoBehaviour {
 	{
 		GameOverState.instance.isAds = true;
 		Player.instance.currentLife ++;
-		GameManager.instance.HideGameOver ();
 		GameManager.instance.ShowGamePlay ();
 		GameManager.instance.objHighScore.SetActive (false);
 		Player.instance.PlayerUndying ();

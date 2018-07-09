@@ -16,7 +16,12 @@ public class GamePlayState : State {
 		
 	}
 
-	public override void Enter ()
+	public override string GetName ()
+	{
+		return "GamePLay";
+	}
+
+	public override void Enter (State from)
 	{
 		gameObject.SetActive (true);
 		RedEnemyTower.instance.StartSpawn ();
@@ -27,7 +32,7 @@ public class GamePlayState : State {
 		MusicThemeManager.instance.OnMusic (4);
 	}
 
-	public override void Exit ()
+	public override void Exit (State to)
 	{
 		gameObject.SetActive (false);
 		RedEnemyTower.instance.PauseSpawn ();

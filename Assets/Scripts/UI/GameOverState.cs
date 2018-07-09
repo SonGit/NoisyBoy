@@ -33,22 +33,27 @@ public class GameOverState : State {
 		CountDown ();
 	}
 
-	public override void Enter ()
+	public override string GetName ()
 	{
-		Invoke ("ShowGameOver", 0.7f);
+		return "GameOver";
+	}
+
+	public override void Enter (State from)
+	{
+		Invoke ("LoadGameOver", 0.7f);
 			
 		if (!isAds) {
 			PlayCountDown ();
 		}
 	}
 
-	public override void Exit ()
+	public override void Exit (State to)
 	{
 		gameObject.SetActive (false);
 
 	}
 		
-	private void ShowGameOver ()
+	private void LoadGameOver ()
 	{
 		gameObject.SetActive (true);
 		isCountdown = true;

@@ -5,97 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : State {
 
-//	public GameObject Main;
-//	public GameObject Setting;
-//	public GameObject Tutorial;
-//
-//	// Use this for initialization
-//	void Start () {
-//		
-//	}
-//	
-//	// Update is called once per frame
-//	void Update () {
-//		
-//	}
-//
-//	public void GoToMain()
-//	{
-//		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
-//
-//		if (Main != null) {
-//			Main.SetActive (true);
-//		}
-//
-//		if (Setting != null) {
-//			Setting.SetActive (false);
-//		}
-//
-//		if (Tutorial != null) {
-//			Tutorial.SetActive (false);
-//		}
-//
-//		if (GameManager.instance != null) {
-//			GameManager.instance.objScore.SetActive (true);
-//		}
-//
-//		if (GameManager.instance != null) {
-//			GameManager.instance.objHighScore.SetActive (true);
-//		}
-//
-//	}
-//
-//	public void GoToSetting()
-//	{
-//		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
-//
-//		if (Main != null) {
-//			Main.SetActive (false);
-//		}
-//
-//		if (Setting != null) {
-//			Setting.SetActive (true);
-//		}
-//
-//		if (GameManager.instance != null) {
-//			GameManager.instance.objScore.SetActive (false);
-//		}
-//
-//		if (GameManager.instance != null) {
-//			GameManager.instance.objHighScore.SetActive (false);
-//		}
-//
-//	}
-//
-//	public void GoToTutorial()
-//	{
-//		AudioManager_RB.instance.PlayClip (AudioManager_RB.SoundFX.ButtonPresses,transform.position);
-//
-//		if (Main != null) {
-//			Main.SetActive (false);
-//		}
-//
-//		if (Tutorial != null) {
-//			Tutorial.SetActive (true);
-//		}
-//
-//		if (GameManager.instance != null) {
-//			GameManager.instance.objScore.SetActive (false);
-//		}
-//
-//		if (GameManager.instance != null) {
-//			GameManager.instance.objHighScore.SetActive (false);
-//		}
-//
-//	}
+	public override string GetName ()
+	{
+		return "MainMenu";
+	}
 
-
-	public override void Enter ()
+	public override void Enter (State from)
 	{
 		gameObject.SetActive (true);
 	}
 
-	public override void Exit ()
+	public override void Exit (State to)
 	{
 		gameObject.SetActive (false);
 	}
